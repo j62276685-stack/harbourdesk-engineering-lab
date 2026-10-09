@@ -1,0 +1,25 @@
+{
+  "legitimate_flow": [
+    "draft",
+    "pending_payment",
+    "paid",
+    "fulfilling",
+    "fulfilled",
+    "refunded"
+  ],
+  "invalid_pairs": [
+    [
+      "paid",
+      "pending_payment"
+    ],
+    [
+      "cancelled",
+      "paid"
+    ],
+    [
+      "refunded",
+      "fulfilling"
+    ]
+  ],
+  "same_state": "paid \u2192 paid changes nothing"
+}

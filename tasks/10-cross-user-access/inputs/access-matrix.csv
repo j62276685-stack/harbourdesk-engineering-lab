@@ -1,0 +1,7 @@
+caller,order,read_expected,pay_expected_on_fresh_seed,transition_to_cancelled_expected
+Ada,ord_ben,404,404,404
+Ben,ord_ben,200,200,200
+Ben,ord_active,404,404,404
+Ada,ord_active,200,200,200
+Unauthenticated,ord_ben,401,401,401
+Ada,ord_missing,404,404,404

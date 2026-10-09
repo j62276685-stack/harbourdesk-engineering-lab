@@ -1,0 +1,13 @@
+{
+  "user_id": 1,
+  "terms": [
+    "active",
+    " ACTIVE ",
+    " active ",
+    "",
+    "   ",
+    "no-such-order",
+    "ben"
+  ],
+  "contract": "trim outside whitespace; case-insensitive substring; retain caller ownership and ID order"
+}

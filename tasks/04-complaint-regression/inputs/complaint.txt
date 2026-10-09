@@ -1,0 +1,2 @@
+Ticket HD-1104: “My newest order is in the account but the first screen skips a couple of orders. Next page looks odd too.”
+Account: Ada, default page size 2. Support confirms the account contains six starter records. Product says sorting is order ID ascending, not creation timestamp. Clarify the complaint against that contract rather than assuming a newest-first sort.

@@ -1,0 +1,7 @@
+{
+  "id": "evt_001",
+  "type": "payment.succeeded",
+  "order_id": "ord_active",
+  "amount_minor": 12500,
+  "currency": "NGN"
+}

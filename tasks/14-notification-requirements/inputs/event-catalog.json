@@ -1,0 +1,50 @@
+{
+  "events": [
+    {
+      "id": "e14a",
+      "type": "order.paid",
+      "user_id": 1,
+      "order_id": "ord_active",
+      "occurred_at": "2026-10-06T09:00:00Z",
+      "amount_minor": 12500,
+      "currency": "NGN"
+    },
+    {
+      "id": "e14a",
+      "type": "order.paid",
+      "user_id": 1,
+      "order_id": "ord_active",
+      "occurred_at": "2026-10-06T09:00:00Z"
+    },
+    {
+      "id": "e14b",
+      "type": "order.cancelled",
+      "user_id": 2,
+      "order_id": "ord_ben",
+      "occurred_at": "2026-10-06T22:00:00Z"
+    },
+    {
+      "id": "e14c",
+      "type": "order.refunded",
+      "user_id": 1,
+      "order_id": "ord_paid",
+      "amount_minor": 1200,
+      "currency": "NGN",
+      "occurred_at": "2026-10-07T08:00:00Z"
+    },
+    {
+      "id": "e14d",
+      "type": "order.fulfilled",
+      "user_id": 1,
+      "order_id": "ord_active",
+      "occurred_at": "2026-10-06T12:00:00Z"
+    },
+    {
+      "id": "e14e",
+      "type": "payment.reconciliation_conflict",
+      "user_id": 1,
+      "order_id": "ord_cancelled",
+      "occurred_at": "2026-10-06T09:10:00Z"
+    }
+  ]
+}

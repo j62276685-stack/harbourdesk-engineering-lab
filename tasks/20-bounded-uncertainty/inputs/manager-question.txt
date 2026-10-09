@@ -1,0 +1,1 @@
+“Did the customer for ord_disputed pay twice yesterday, or did we just send the receipt twice? I need a defensible answer and the next check to perform.” Historical window: 5 October 2026, 14:00–14:10 UTC.

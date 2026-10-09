@@ -1,0 +1,4 @@
+# Preserved legacy billing contract
+Input domain: nonnegative integer subtotal_minor; customer_tier standard/member; coupon None/WELCOME; delivery pickup/courier. Return an integer amount. Public signature must remain compatible.
+Established calculation order: member subtracts floor(5% of current amount); WELCOME subtracts 1000 when the discounted amount is strictly greater than 10000, otherwise 500; courier adds 1500 when the post-coupon amount is strictly less than 15000; floor negative totals at zero; add 7.5% tax rounded by integer half-up arithmetic. These business choices are intentionally frozen for refactoring, even where they look surprising.
+Tests should include values on either side of a threshold, zero/tiny values, large values, each option combination, and tax rounding. Do not change the order to make it “more sensible.”

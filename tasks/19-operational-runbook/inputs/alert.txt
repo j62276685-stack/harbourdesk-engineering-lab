@@ -1,0 +1,1 @@
+Historical synthetic alert HD-NOTIFY-19: pending email jobs older than 15 min; oldest job notice-1; worker error provider_unavailable; no successful drain for 10 min. Account, order and job IDs are synthetic. Recreate a comparable state with local controls rather than assuming this alert describes current runtime data.

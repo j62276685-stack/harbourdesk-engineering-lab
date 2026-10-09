@@ -1,0 +1,5 @@
+2026-10-06T09:02:01+01:00 req=px-100 POST /webhooks/payments status=200 event=evt_610 upstream_ms=18
+2026-10-06T09:02:01+01:00 req=px-101 POST /webhooks/payments status=200 event=evt_610 upstream_ms=24
+2026-10-06T09:02:38+01:00 req=px-102 POST /webhooks/payments status=503 event=evt_611 upstream_ms=5021
+2026-10-06T09:03:11+01:00 req=px-103 POST /webhooks/payments status=200 event=evt_611 upstream_ms=19
+2026-10-06T09:03:50+01:00 req=px-104 GET /health status=200 upstream_ms=2

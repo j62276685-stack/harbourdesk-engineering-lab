@@ -1,0 +1,3 @@
+# Limits
+Provider summary is merchant-wide and has no order/charge/settlement identifiers. Successful delivery is not successful charge. App fragments contain no payment insertion, idempotency key, charge ID or settled status. There is no complete database snapshot, code revision, bank statement or provider transaction export. Absence in the fragment is not proof of absence in the full system.
+The interactive starter code is not the historical deployment. Request a specific read-only extract or statement before deciding what happened. No credentials are needed or supplied; describe the next observation rather than inventing its results.

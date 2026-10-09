@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173e35">
+  <meta name="description" content="Your orders, payments and collection plans, together in HarbourDesk.">
+  <title>HarbourDesk — Your orders, together</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <svg class="icon-definitions" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="mark" viewBox="0 0 32 32"><path d="M5 24V9h6v15m10 0V9h6v15M5 16h22M11 24l10-15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></symbol>
+    <symbol id="box" viewBox="0 0 24 24"><path d="m3 7 9-4 9 4v10l-9 4-9-4V7Zm0 0 9 4 9-4M12 11v10M7.5 5l9 4"/></symbol>
+    <symbol id="wallet" viewBox="0 0 24 24"><path d="M4 5h14v14H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 0V3h14v2m-1 5h5v5h-5v-5Z"/></symbol>
+    <symbol id="help" viewBox="0 0 24 24"><path d="M8 9a4 4 0 0 1 8 0c0 3-4 2-4 5m0 3v.1"/><circle cx="12" cy="12" r="10"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="search-icon" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="clock-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="exit" viewBox="0 0 24 24"><path d="M9 4H4v16h5m1-8h11m-4-4 4 4-4 4"/></symbol>
+  </defs></svg>
+
+  <div id="notice" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <main id="login" class="sign-in-layout">
+    <section class="sign-in-panel">
+      <a class="brand" href="/" aria-label="HarbourDesk home"><svg class="brand-mark"><use href="#mark"/></svg>HarbourDesk<span class="brand-dot">.</span></a>
+      <div class="sign-in-content">
+        <span class="eyebrow">A little less admin. A little more day.</span>
+        <h1>Welcome back.</h1>
+        <p class="lead">Your orders, payments and collection plans.<br>All in one familiar place.</p>
+        <form id="login-form">
+          <label for="email">Email address</label>
+          <input id="email" type="email" autocomplete="username" value="ada@example.test" required>
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password" value="practice-only" required>
+          <button id="signin" class="primary full" type="submit">Sign in <svg class="icon"><use href="#arrow"/></svg></button>
+        </form>
+        <div class="separator"><span>or continue with</span></div>
+        <a class="identity-button" href="/auth/start"><span class="identity-mark">H</span> Harbour Identity <svg class="icon"><use href="#arrow"/></svg></a>
+        <div class="example-accounts"><span>Explore an example account</span><div><button type="button" data-account="ada">Ada</button><button type="button" data-account="ben">Ben</button></div><small>Password: practice-only</small></div>
+      </div>
+      <footer class="preview-note">Product preview · Example accounts · No live charges</footer>
+    </section>
+    <section class="welcome-panel" aria-label="HarbourDesk collection experience">
+      <div class="welcome-top"><span class="pill light">Made for the everyday</span><button class="text-button light-text" data-guide>How collection works ↗</button></div>
+      <h2>Reserved.<br>Ready.<br><em>Yours.</em></h2>
+      <p>Good things, without the back-and-forth.<br>Keep every order in view, from reservation<br>to the moment you pick it up.</p>
+      <svg class="parcel-art" viewBox="0 0 520 330" role="img" aria-label="Original illustration of a collection bag and order card">
+        <ellipse cx="285" cy="285" rx="175" ry="25" fill="#0d2e27" opacity=".45"/>
+        <g transform="rotate(-9 300 190)"><path d="M193 102h200l22 185H177Z" fill="#e8bc7a"/><path d="M193 102h200l-23 22H216Z" fill="#f6d59f"/><path d="M218 118c0-99 120-99 120 0" fill="none" stroke="#b3824b" stroke-width="9"/><path d="M225 112c0-84 106-84 106 0" fill="none" stroke="#173e35" stroke-width="5"/><path d="M263 229v-69h18v69m34 0v-69h18v69m-70-35h70m-52 35 34-69" fill="none" stroke="#173e35" stroke-width="5"/><path d="m376 131 22 146" stroke="#c89758" stroke-width="2"/></g>
+        <g transform="rotate(7 149 211)"><rect x="50" y="149" width="195" height="137" rx="9" fill="#fff9ef"/><rect x="67" y="168" width="36" height="36" rx="18" fill="#e2eddb"/><path d="m77 185 7 7 12-14" fill="none" stroke="#173e35" stroke-width="3"/><text x="116" y="182" fill="#173e35" font-family="system-ui,sans-serif" font-size="11" font-weight="600">YOUR ORDER</text><text x="116" y="199" fill="#567366" font-family="system-ui,sans-serif" font-size="10">One step closer.</text><path d="M67 223h156M67 242h90M67 258h115" stroke="#d5d8ca" stroke-width="3"/></g>
+        <path d="m420 60 7 14 15 2-11 11 3 15-14-7-13 7 2-15-10-11 15-2Z" fill="#d0e3a8"/>
+        <circle cx="97" cy="108" r="7" fill="#d0e3a8"/>
+      </svg>
+      <div class="welcome-bottom"><span>HarbourDesk / customer account</span><span>Lagos, Nigeria</span></div>
+    </section>
+  </main>
+
+  <div id="dashboard" class="account-layout" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="HarbourDesk home"><svg class="brand-mark"><use href="#mark"/></svg>HarbourDesk<span class="brand-dot">.</span></a>
+      <div class="workspace-label">YOUR ACCOUNT</div>
+      <nav class="main-nav" aria-label="Account navigation">
+        <button class="nav-button active" data-view="orders" aria-current="page"><svg class="icon"><use href="#box"/></svg>Orders<span id="nav-order-count" class="nav-count">0</span></button>
+        <button class="nav-button" data-view="wallet"><svg class="icon"><use href="#wallet"/></svg>Wallet</button>
+        <button class="nav-button" data-view="help"><svg class="icon"><use href="#help"/></svg>Collection & help</button>
+      </nav>
+      <div class="sidebar-note"><span class="tiny-arrow">↗</span><h3>From reserved<br>to ready.</h3><p>Find your latest order details and collection updates here.</p><button class="text-button" data-guide>See how it works →</button></div>
+      <div class="sidebar-bottom"><div class="account-person"><span id="avatar" class="avatar">A</span><div><strong id="account-name">Your account</strong><small id="account-email"></small></div></div><button id="signout" class="signout"><svg class="icon"><use href="#exit"/></svg>Sign out</button><small class="preview-note">Product preview · No live charges</small></div>
+    </aside>
+    <main class="workspace">
+      <header class="workspace-header"><span>Account <span class="breadcrumb-slash">/</span> <strong id="breadcrumb">Orders</strong></span><div class="header-right"><span class="connection-dot"></span><span id="clock">Updating…</span><button class="quiet-button" id="refresh" aria-label="Refresh account data">↻</button></div></header>
+      <section id="orders-view" class="view">
+        <div class="page-heading"><div><span class="eyebrow">YOUR NEXT LITTLE THING</span><h1>Your orders<span class="heading-dot">.</span></h1><p>Every reservation, payment and collection, together.</p></div><button class="secondary" id="lookup">Find an order <svg class="icon"><use href="#arrow"/></svg></button></div>
+        <div class="summary-grid">
+          <article class="summary-card"><div><span>Awaiting payment</span><svg class="icon"><use href="#clock-icon"/></svg></div><strong id="pending-count">—</strong><small>Reservations to complete</small></article>
+          <article class="summary-card"><div><span>Payment received</span><svg class="icon"><use href="#check"/></svg></div><strong id="paid-count">—</strong><small>Paid orders in your account</small></article>
+          <article class="summary-card collection-summary"><div><span>A smoother collection</span><svg class="icon"><use href="#box"/></svg></div><h3>A few details.<br>Then you're on your way.</h3><button class="text-button" data-guide>Collection checklist ↗</button></article>
+        </div>
+        <section class="order-section" aria-labelledby="order-list-title">
+          <div class="section-heading"><h2 id="order-list-title">Order history <span id="order-total" class="total-badge"></span></h2><div class="list-tools"><button class="quiet-button" id="export-orders">Export CSV ↓</button><label for="page-size" class="sr-only">Orders per page</label><select id="page-size"><option value="all">All orders</option><option value="2">2 per page</option><option value="4">4 per page</option></select></div></div>
+          <div class="filter-row"><div class="tabs" aria-label="Order filters"><button class="tab active" data-filter="all" aria-pressed="true">All orders</button><button class="tab" data-filter="pending_payment" aria-pressed="false">Awaiting payment</button><button class="tab" data-filter="paid" aria-pressed="false">Paid</button><button class="tab" data-filter="cancelled" aria-pressed="false">Cancelled</button></div><form id="search-form" class="search-field"><svg class="icon"><use href="#search-icon"/></svg><label class="sr-only" for="search">Search order reference</label><input id="search" aria-label="Search order reference" placeholder="Search order reference" type="search"><button type="submit" aria-label="Search orders">↵</button></form></div>
+          <div id="orders" class="order-list" aria-live="polite"></div>
+          <div id="empty-orders" class="empty-state" hidden><svg class="icon"><use href="#search-icon"/></svg><h3>No orders to show.</h3><p>Try another reference or clear the current filters.</p><button class="secondary" id="clear-filters">Clear filters</button></div>
+          <div class="list-footer"><span id="result-count"></span><div id="pagination" class="pagination" hidden><button class="secondary" id="previous">← Previous</button><span id="page-label">Page 1</span><button class="secondary" id="next">Next →</button></div><span class="muted">Amounts shown in NGN</span></div>
+        </section>
+        <div class="bottom-note"><svg class="icon"><use href="#help"/></svg><span>A question about an order? Start with its details and payment reference.</span><button class="text-button" data-view="help">View help →</button></div>
+      </section>
+      <section id="wallet-view" class="view" hidden>
+        <div class="page-heading"><div><span class="eyebrow">A CLEARER ACCOUNT</span><h1>Your wallet<span class="heading-dot">.</span></h1><p>Your stored credit and the transactions behind it.</p></div><button id="export-wallet" class="secondary">Export ledger CSV ↓</button></div>
+        <article class="wallet-balance"><span>Available balance</span><strong id="wallet-balance">—</strong><small>Account credit · NGN</small></article>
+        <section class="order-section"><div class="section-heading"><h2>Posted transactions</h2><span class="muted">Most recent first</span></div><div class="table-scroll"><table class="ledger"><thead><tr><th>Transaction</th><th>Reference</th><th>Posted</th><th class="amount-column">Amount</th></tr></thead><tbody id="wallet-entries"></tbody></table></div></section>
+        <div class="bottom-note"><svg class="icon"><use href="#help"/></svg><span>Keep a transaction reference handy when reviewing your account credit.</span></div>
+      </section>
+      <section id="help-view" class="view" hidden>
+        <div class="page-heading"><div><span class="eyebrow">LESS BACK-AND-FORTH</span><h1>Ready when you are<span class="heading-dot">.</span></h1><p>A simple guide to your order and collection.</p></div></div>
+        <div class="help-grid"><article class="help-card"><span class="step-number">01</span><h2>Complete your reservation.</h2><p>Open your order, check the amount and complete payment before the reservation expires.</p></article><article class="help-card"><span class="step-number">02</span><h2>Check the latest status.</h2><p>Payment received and ready for collection are separate steps. Wait for your fulfilment update before making the trip.</p></article><article class="help-card"><span class="step-number">03</span><h2>Keep your reference close.</h2><p>Bring the order reference and the confirmed collection details. Use your order history to review payments and updates.</p></article></div>
+        <section class="order-section faq"><h2>A few useful answers</h2><details open><summary>My reservation has expired. What next?</summary><p>An expired reservation needs to be reviewed before payment. Keep its order reference and confirm availability before starting again.</p></details><details><summary>My payment and order status disagree.</summary><p>Retain the order and payment references. A payment receipt alone does not establish the latest settlement or fulfilment outcome; the account records need to be checked together.</p></details><details><summary>How do I save a copy of my orders?</summary><p>Use Export CSV in Order history. The export includes the current results and their recorded amounts, statuses and deadlines.</p></details><details><summary>Does this preview charge my card?</summary><p>No. This local product preview uses example accounts and a local payment service. No card, email or live collection is connected.</p></details></section>
+      </section>
+      <footer class="workspace-footer"><span>HarbourDesk. A place for every order.</span><span>Product preview · Example data</span></footer>
+    </main>
+  </div>
+
+  <dialog id="order-dialog" class="order-dialog" aria-labelledby="detail-title"><form method="dialog" class="dialog-top"><span class="eyebrow">ORDER DETAILS</span><button class="close-button" aria-label="Close order details">×</button></form><div id="order-detail"></div></dialog>
+  <dialog id="lookup-dialog" class="lookup-dialog" aria-labelledby="lookup-title"><form method="dialog" class="dialog-top"><span class="eyebrow">YOUR ORDER</span><button class="close-button" aria-label="Close order lookup">×</button></form><h2 id="lookup-title">Find by reference.</h2><p>Enter the order reference saved with your reservation.</p><form id="lookup-form"><label for="lookup-reference">Order reference</label><input id="lookup-reference" placeholder="e.g. ord_active" required><p id="lookup-error" class="field-error" role="alert" hidden></p><button class="primary full" type="submit">Open order <svg class="icon"><use href="#arrow"/></svg></button></form></dialog>
+  <dialog id="guide-dialog" class="lookup-dialog" aria-labelledby="guide-title"><form method="dialog" class="dialog-top"><span class="eyebrow">COLLECTION CHECKLIST</span><button class="close-button" aria-label="Close collection guide">×</button></form><h2 id="guide-title">A little preparation<br>goes a long way.</h2><ol class="guide-list"><li>Check your order and complete payment before the deadline.</li><li>Wait for the confirmed collection or fulfilment update.</li><li>Save the order reference and the collection details.</li></ol><p class="muted">This preview doesn't arrange a real collection.</p><form method="dialog"><button class="primary full">Got it <svg class="icon"><use href="#check"/></svg></button></form></dialog>
+  <script src="/static/app.js"></script>
+</body>
+</html>

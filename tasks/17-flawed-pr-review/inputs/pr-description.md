@@ -1,0 +1,4 @@
+# Local proposed PR #17: Accept major-unit refund amounts without breaking existing callers
+Author note: Support sometimes enters amounts like 12.50 rather than 1250. This convenience change accepts decimal/text values, converts them to minor units and keeps the maximum-refund validation. Existing integer callers are said to remain compatible. Please review the amount conversion and boundary behavior.
+Existing contract: original_minor and requested_minor are integer minor units; requested is positive and no greater than original; booleans/fractions/strings are rejected. A new explicit major-unit entry point could be considered separately, but this PR claims to preserve the existing entry point.
+The proposed source is supplied independently so you can review without replacing your baseline. Line numbers in findings refer to [refunds_candidate.py](refunds_candidate.py). The candidate has not been merged or deployed.

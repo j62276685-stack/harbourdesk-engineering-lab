@@ -1,0 +1,58 @@
+{
+  "cases": [
+    {
+      "name": "bad_zero",
+      "amount_minor": 0,
+      "response": {
+        "status": 200
+      }
+    },
+    {
+      "name": "bad_boolean",
+      "amount_minor": true,
+      "response": {
+        "status": 200
+      }
+    },
+    {
+      "name": "decline",
+      "amount_minor": 12500,
+      "response": {
+        "status": 402,
+        "code": "card_declined"
+      }
+    },
+    {
+      "name": "outage",
+      "amount_minor": 12500,
+      "response": {
+        "status": 503,
+        "code": "upstream_maintenance_internal_ref_123"
+      }
+    },
+    {
+      "name": "timeout",
+      "amount_minor": 12500,
+      "response": {
+        "status": 0,
+        "code": "timeout"
+      }
+    },
+    {
+      "name": "unexpected",
+      "amount_minor": 12500,
+      "response": {
+        "status": 418,
+        "code": "raw_provider_details"
+      }
+    },
+    {
+      "name": "success",
+      "amount_minor": 12500,
+      "response": {
+        "status": 200,
+        "payment_id": "pay_006"
+      }
+    }
+  ]
+}

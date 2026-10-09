@@ -1,0 +1,58 @@
+[
+  {
+    "id": "c01",
+    "email": " Ada@Example.test ",
+    "phone": "+234800000001",
+    "external_ref": "crm-01",
+    "imported_at": "2026-10-01T09:00:00Z"
+  },
+  {
+    "id": "c02",
+    "email": "ada@example.test",
+    "phone": "0800000001",
+    "external_ref": "crm-02",
+    "imported_at": "2026-10-02T09:00:00Z"
+  },
+  {
+    "id": "c03",
+    "email": "BEN@example.test",
+    "phone": null,
+    "external_ref": "crm-03",
+    "imported_at": "2026-10-01T09:00:00Z"
+  },
+  {
+    "id": "c04",
+    "email": null,
+    "phone": "+234800000004",
+    "external_ref": "crm-04",
+    "imported_at": "2026-10-01T09:00:00Z"
+  },
+  {
+    "id": "c05",
+    "email": "",
+    "phone": "+234800000005",
+    "external_ref": "crm-05",
+    "imported_at": "2026-10-01T09:00:00Z"
+  },
+  {
+    "id": "c06",
+    "email": "not-an-email",
+    "phone": "+234800000006",
+    "external_ref": "crm-06",
+    "imported_at": "2026-10-01T09:00:00Z"
+  },
+  {
+    "id": "c07",
+    "email": " ada@example.test ",
+    "phone": null,
+    "external_ref": "crm-07",
+    "imported_at": "2026-10-03T09:00:00Z"
+  },
+  {
+    "id": "c08",
+    "email": "chidi@example.test",
+    "phone": "+234800000008",
+    "external_ref": "crm-08",
+    "imported_at": "2026-10-01T09:00:00Z"
+  }
+]

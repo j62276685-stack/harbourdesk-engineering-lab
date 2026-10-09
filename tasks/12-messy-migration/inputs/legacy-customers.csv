@@ -1,0 +1,9 @@
+id,email,phone,external_ref,imported_at
+c01, Ada@Example.test ,+234800000001,crm-01,2026-10-01T09:00:00Z
+c02,ada@example.test,0800000001,crm-02,2026-10-02T09:00:00Z
+c03,BEN@example.test,,crm-03,2026-10-01T09:00:00Z
+c04,,+234800000004,crm-04,2026-10-01T09:00:00Z
+c05,,+234800000005,crm-05,2026-10-01T09:00:00Z
+c06,not-an-email,+234800000006,crm-06,2026-10-01T09:00:00Z
+c07, ada@example.test ,,crm-07,2026-10-03T09:00:00Z
+c08,chidi@example.test,+234800000008,crm-08,2026-10-01T09:00:00Z

@@ -1,0 +1,4 @@
+2026-10-06T07:58:00Z deploy release=lab-r12 replicas=2
+2026-10-06T08:01:40Z rollout complete release=lab-r12
+2026-10-06T08:05:00Z operator paused notification worker for investigation
+No source diff or prior-release logs supplied.

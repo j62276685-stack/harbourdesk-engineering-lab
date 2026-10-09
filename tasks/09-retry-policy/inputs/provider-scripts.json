@@ -1,0 +1,71 @@
+{
+  "eventual_success": [
+    {
+      "status": 503,
+      "code": "unavailable",
+      "elapsed_seconds": 0.2
+    },
+    {
+      "status": 200,
+      "payment_id": "pay_retry",
+      "elapsed_seconds": 0.1
+    }
+  ],
+  "permanent": [
+    {
+      "status": 400,
+      "code": "bad_request"
+    },
+    {
+      "status": 200,
+      "payment_id": "must_not_call"
+    }
+  ],
+  "rate_limit": [
+    {
+      "status": 429,
+      "code": "rate_limit",
+      "retry_after": 20
+    },
+    {
+      "status": 200,
+      "payment_id": "pay_rl"
+    }
+  ],
+  "budget": [
+    {
+      "status": 0,
+      "code": "timeout",
+      "elapsed_seconds": 7.5
+    },
+    {
+      "status": 200,
+      "payment_id": "must_not_call"
+    }
+  ],
+  "exhausted": [
+    {
+      "status": 503,
+      "code": "unavailable"
+    },
+    {
+      "status": 503,
+      "code": "unavailable"
+    },
+    {
+      "status": 503,
+      "code": "unavailable"
+    }
+  ],
+  "malformed": [
+    {
+      "status": 429,
+      "code": "rate_limit",
+      "retry_after": "tomorrow"
+    },
+    {
+      "status": 200,
+      "payment_id": "pay_fallback"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "inputs": [
+    [
+      12500,
+      50
+    ],
+    [
+      12500,
+      5000
+    ],
+    [
+      12500,
+      true
+    ],
+    [
+      12500,
+      "12.50"
+    ],
+    [
+      12500,
+      0
+    ],
+    [
+      12500,
+      -1
+    ],
+    [
+      12500,
+      12501
+    ]
+  ],
+  "note": "Compare each result with the baseline contract and candidate. These are review prompts, not a completed review."
+}

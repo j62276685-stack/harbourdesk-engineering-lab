@@ -1,0 +1,161 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "HarbourDesk: Start application",
+      "type": "process",
+      "command": "./lab",
+      "args": [
+        "serve"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "HarbourDesk: Run tests",
+      "type": "process",
+      "command": "./lab",
+      "args": [
+        "test"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "HarbourDesk: Capture task probe",
+      "type": "process",
+      "command": "./lab",
+      "args": [
+        "record",
+        "probe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "HarbourDesk: Capture current database",
+      "type": "process",
+      "command": "./lab",
+      "args": [
+        "record",
+        "database"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "HarbourDesk: Capture source diff",
+      "type": "process",
+      "command": "./lab",
+      "args": [
+        "record",
+        "diff"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "HarbourDesk: Capture report benchmark",
+      "type": "process",
+      "command": "./lab",
+      "args": [
+        "record",
+        "benchmark"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "HarbourDesk: Capture worker status",
+      "type": "process",
+      "command": "./lab",
+      "args": [
+        "record",
+        "worker-status"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "HarbourDesk: Tick worker",
+      "type": "process",
+      "command": "./lab",
+      "args": [
+        "record",
+        "worker-tick"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "HarbourDesk: Requeue unsent job",
+      "type": "process",
+      "command": "./lab",
+      "args": [
+        "record",
+        "worker-requeue",
+        "--job",
+        "${input:jobId}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "jobId",
+      "type": "promptString",
+      "description": "Job ID from the notification queue"
+    }
+  ]
+}

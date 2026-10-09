@@ -1,0 +1,533 @@
+{
+  "inputs": [
+    {
+      "subtotal_minor": 0,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 0,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 0,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 0,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 0,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 0,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 0,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 0,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 1,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 1,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 1,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 1,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 1,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 1,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 1,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 1,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 99,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 99,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 99,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 99,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 99,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 99,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 99,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 99,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 9999,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 9999,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 9999,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 9999,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 9999,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 9999,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 9999,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 9999,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 10000,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 10000,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 10000,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 10000,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 10000,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 10000,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 10000,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 10000,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 10001,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 10001,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 10001,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 10001,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 10001,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 10001,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 10001,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 10001,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 14999,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 14999,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 14999,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 14999,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 14999,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 14999,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 14999,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 14999,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 15000,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 15000,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 15000,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 15000,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 15000,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 15000,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 15000,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 15000,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 15001,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 15001,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 15001,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 15001,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 15001,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 15001,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 15001,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 15001,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 25000,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 25000,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 25000,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 25000,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 25000,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 25000,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 25000,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 25000,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 999999,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 999999,
+      "customer_tier": "standard",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 999999,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 999999,
+      "customer_tier": "standard",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 999999,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 999999,
+      "customer_tier": "member",
+      "coupon": null,
+      "delivery": "courier"
+    },
+    {
+      "subtotal_minor": 999999,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "pickup"
+    },
+    {
+      "subtotal_minor": 999999,
+      "customer_tier": "member",
+      "coupon": "WELCOME",
+      "delivery": "courier"
+    }
+  ],
+  "note": "Record baseline outputs yourself before refactoring. Expected outputs are deliberately not filled in."
+}

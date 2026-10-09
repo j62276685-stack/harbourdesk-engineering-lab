@@ -1,0 +1,5 @@
+Ticket HD-1101 — 6 October 2026, 09:05 UTC
+“I can sign in with the password button. Using Harbour Identity sends me back to login_state_missing_or_invalid. It looks like the provider worked.”
+Environment reported: a normal browser tab, app opened at localhost:8010, provider at 127.0.0.1:8011. Browser/version was not included; record your own.
+Capture: URL chain, initiator, request Cookie header, response Set-Cookie header, callback result, and whether the same tab/session was used.
+No browser trace is supplied; collecting it is part of the task.

@@ -1,0 +1,3 @@
+# Branch requirements
+Baseline delivery costs 1500 minor units. free-delivery makes local shipping free when subtotal >= 25000. remote-delivery adds a remote-region fee of 3000 at all subtotals. The product decision is that only local deliveries qualify for free shipping; remote remains 3000 even for a high subtotal.
+The function already accepts region="local". Valid inputs are nonnegative integer subtotals and local/remote region. Preserve both branches' generated tests and public signature. setup-merge runs once from a pristine committed starter and uses local identities; it does not push anywhere. Complete the merge after tests using git add and git commit. Do not choose a codex/ branch name.

@@ -1,0 +1,2 @@
+09:04 Lagos: Customer saw two receipt emails for order ord_incident_1. No screenshots, settlement identifiers or bank statement supplied.
+09:06 Lagos: Operator says notification worker paused; this is a report, not a worker log.

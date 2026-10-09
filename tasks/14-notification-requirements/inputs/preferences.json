@@ -1,0 +1,16 @@
+{
+  "1": {
+    "email": "ada@example.test",
+    "timezone": "Africa/Lagos",
+    "optional_email": false,
+    "push": true,
+    "marketing_opt_in": false
+  },
+  "2": {
+    "email": null,
+    "timezone": "Europe/London",
+    "optional_email": true,
+    "push": false,
+    "marketing_opt_in": false
+  }
+}

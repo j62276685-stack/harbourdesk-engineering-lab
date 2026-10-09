@@ -1,0 +1,4 @@
+{"ts": "2026-10-05T14:01:02Z", "order_id": "ord_disputed", "event_id": "evt_disputed", "message": "delivery_received"}
+{"ts": "2026-10-05T14:01:03Z", "order_id": "ord_disputed", "event_id": "evt_disputed", "message": "receipt_enqueued"}
+{"ts": "2026-10-05T14:01:04Z", "order_id": "ord_disputed", "event_id": "evt_disputed", "message": "delivery_received"}
+{"ts": "2026-10-05T14:01:05Z", "order_id": "ord_disputed", "event_id": "evt_disputed", "message": "receipt_enqueued"}

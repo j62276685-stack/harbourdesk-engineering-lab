@@ -1,0 +1,5 @@
+delivery_id,event_id,attempt,started_utc,http_result
+del_81,evt_610,1,2026-10-06T08:01:59Z,200
+del_82,evt_610,2,2026-10-06T08:01:59.500Z,200
+del_83,evt_611,1,2026-10-06T08:02:32Z,503
+del_84,evt_611,2,2026-10-06T08:03:09Z,200

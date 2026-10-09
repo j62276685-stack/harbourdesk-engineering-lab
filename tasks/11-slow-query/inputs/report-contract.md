@@ -1,0 +1,3 @@
+# Report workload
+For one user, one exact status and an inclusive created_at lower bound, return up to 50 newest matching rows. Tie-break by ID ascending. Return id, user_id, status, amount_minor, currency and created_at without changing values. The base clock/timezone does not enter this query.
+Default workload: user 1, paid, since 2026-10-01T00:00:00Z. The seeded bulk data has two users, two statuses and timestamp ties. Use the same query parameters and row count for before/after. Index changes require a repeatable existing-database step plus the initial schema update. Include an empty future-range case and user 2/pending_payment case for result equivalence.

@@ -1,0 +1,36 @@
+# Task 02: Fix an expired action that remains available
+
+## Error or request
+
+Support says an expired order still displays Pay now and the API accepts payment. Enforce the expiry contract at the interface and service boundary.
+
+## Relevant files
+
+[app/orders.py](../../app/orders.py); [app/http.py](../../app/http.py); [app/clock.py](../../app/clock.py); [web/app.js](../../web/app.js).
+
+- [expiry-cases.json](inputs/expiry-cases.json)
+
+## Reproduce or investigate
+
+From the project root, run `./lab start 02`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+
+Run `./lab probe 02`. Use Ada in `./lab serve` and compare `ord_expired`, `ord_boundary` and `ord_before`. Inspect the HTTP response and order version before/after an attempt. Use explicit `LAB_NOW` values or an injected test clock.
+
+## Completion criteria
+
+1. One second before expiry is allowed, exactly at expiry and one second after are rejected.
+2. A direct API request rejects an expired order independently of the button; choose a clear 409 domain error.
+3. Rejected requests leave status, version and financial rows unchanged.
+4. The UI disables or removes the action for expired and non-payable orders and updates as the visible countdown crosses expiry.
+5. Check equivalent offset timestamps and an ordinary unexpired order.
+
+## Deliverable
+
+A patch, UI evidence and deterministic server/API boundary tests. Scope is expiry; general payment-provider integration is excluded.
+
+## Task sessions
+
+Choose a session below for its scope, apps, outputs and checks.
+
+- [02.1 — Audit expired-payment behavior at the boundary](../../sessions/02.1/GOAL.md)
+- [02.2 — Enforce and verify expiry in one checkout path](../../sessions/02.2/GOAL.md)

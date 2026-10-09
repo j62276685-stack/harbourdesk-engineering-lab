@@ -1,0 +1,13 @@
+--- a/app/refunds.py
++++ b/app/refunds.py
+@@ -1,6 +1,6 @@
+ def refund_amount(original_minor, requested_minor):
+-    if isinstance(requested_minor,bool) or not isinstance(requested_minor,int):
+-        raise ValueError("amount must be an integer in minor units")
+-    if requested_minor <= 0 or requested_minor > original_minor:
++    # Normalize support-form input to minor units.
++    amount = round(float(requested_minor) * 100)
++    if amount <= 0 or amount > original_minor:
+         raise ValueError("amount outside refundable range")
+-    return requested_minor
++    return amount

@@ -1,0 +1,34 @@
+# 02.1 — Audit expired-payment behavior at the boundary
+
+**Role:** Backend software engineer
+
+**Purpose:** Prevent payment attempts after an order reservation expires.
+
+**Stakeholder:** Checkout product owner and QA engineer.
+
+## Task description
+
+Compare the expiry labels, direct request behavior and persisted order changes for three boundary fixtures, then deliver a defect evidence matrix to QA.
+
+## Final deliverable
+
+- `expiry-evidence.csv`
+- `expiry-defect.md`
+- `expiry-interface.png`
+
+## Quality checks
+
+- [ ] The three time cases are controlled explicitly.
+- [ ] UI and server outcomes are recorded separately.
+- [ ] Before/after persisted values support the mutation claim.
+- [ ] The defect note specifies rejection at equality and legitimate unexpired behavior.
+
+**Apps:** Firefox, Visual Studio Code, DB Browser for SQLite.
+
+**Recording:** Aim for 30:00 including the intro; allowed length 15:00–45:59.
+
+## Workflow
+
+1. Inspect the three order fixtures and server clock in DB Browser and the app.
+2. Observe browser requests and the source predicate while comparing before/exactly-at/after expiry.
+3. Record the outcome, before/after status and version, and exact acceptance boundary.

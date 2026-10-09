@@ -1,0 +1,6 @@
+# Stakeholder notes (synthetic)
+Product: Notify the buyer when paid, cancelled, ready/fulfilled, or refunded. Operations also wants to hear about reconciliation conflicts. Marketing asks to include a promotional paragraph; legal/product consent requirements have not been signed off.
+Support: Never send two receipts for one payment event. Refund messages must tell the buyer the amount and order ID, without exposing internal provider diagnostics. Customers complain about late-night pushes.
+Engineering: Email and in-app are feasible first. SMS would need a future integration and cost approval; do not assume it is available. Events can arrive twice or out of order. One account may have no email. Existing preferences include timezone and optional-channel opt-out.
+Operations: Failures should be observable, not silently dropped. A status update should not disclose another customer's order. Operators may receive a reconciliation alert but not all routine customer receipts.
+Known launch constraint: no marketing content without explicit separate opt-in. Transactional order receipts are required product messages; choose and document how they reach people without email. In-app is always available for an authenticated account. Decide reasonable provisional quiet-hour and dedupe windows and label them as assumptions requiring product confirmation.

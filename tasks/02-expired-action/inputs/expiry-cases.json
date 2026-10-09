@@ -1,0 +1,11 @@
+{
+  "clock": "2026-10-06T09:00:00Z",
+  "orders": [
+    "ord_expired",
+    "ord_boundary",
+    "ord_before",
+    "ord_active"
+  ],
+  "equivalent_expiry": "2026-10-06T10:00:00+01:00",
+  "ticket": "Expired label is visible but payment action still succeeds."
+}

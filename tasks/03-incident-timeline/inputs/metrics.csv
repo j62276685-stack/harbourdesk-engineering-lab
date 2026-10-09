@@ -1,0 +1,4 @@
+bucket_start_utc,duration_seconds,webhook_requests,payment_rows_created,database_busy
+2026-10-06T08:01:00Z,60,0,0,0
+2026-10-06T08:02:00Z,60,3,2,1
+2026-10-06T08:03:00Z,60,1,1,0

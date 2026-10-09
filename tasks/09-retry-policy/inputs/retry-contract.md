@@ -1,0 +1,4 @@
+# Retry boundary
+The budget begins before the first request. It covers all simulated request durations plus waits. No attempt can guarantee that a transport timeout means the remote operation failed. A stable idempotency key is mandatory for retries. A final timed-out response remains an uncertain payment outcome; surface a status-check instruction rather than claiming no charge occurred.
+
+Policy eligibility, attempt count, schedule and eight-second ceiling are in TASK.md. Parse nonnegative integer Retry-After seconds; missing/negative/nonnumeric values use the ordinary delay. Cap a valid larger requested delay at four seconds. HTTP-date parsing is outside scope. Check the budget before calls and waits and after failed calls. A request may itself exceed the budget; then stop immediately after it returns. Inject a fake clock and a sleep callback. ScriptedProvider(on_call=...) can advance that clock by elapsed_seconds for each simulated request.

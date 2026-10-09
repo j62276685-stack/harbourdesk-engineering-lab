@@ -1,0 +1,5 @@
+entry_id,user_id,delta_minor,source_ref,created_at
+le_001,1,20000,opening:1,2026-10-05T09:00:00Z
+le_002,1,-3000,purchase:101,2026-10-05T10:00:00Z
+le_003,1,1200,refund:101,2026-10-05T11:00:00Z
+le_004,2,5000,opening:2,2026-10-05T09:00:00Z
