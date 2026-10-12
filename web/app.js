@@ -22,7 +22,14 @@ async function request(path, options={}) {
   return data;
 }
 function showError(error) { notify(messages[error.message] || `We couldn’t complete that request (${error.message}).`,true); }
-function showSignIn() { $('#login').hidden=false; $('#dashboard').hidden=true; document.title='HarbourDesk — Welcome back'; }
+function setPasswordVisible(visible) {
+  $('#password').type=visible ? 'text' : 'password';
+  $('#password-toggle').textContent=visible ? 'Hide' : 'Show';
+  $('#password-toggle').setAttribute('aria-label',visible ? 'Hide password' : 'Show password');
+  $('#password-toggle').setAttribute('aria-pressed',String(visible));
+}
+$('#password-toggle').onclick=()=>setPasswordVisible($('#password').type==='password');
+function showSignIn() { setPasswordVisible(false); $('#login').hidden=false; $('#dashboard').hidden=true; document.title='HarbourDesk — Welcome back'; }
 function showAccount() {
   $('#login').hidden=true; $('#dashboard').hidden=false;
   $('#account-name').textContent=state.user.name;

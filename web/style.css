@@ -17,3 +17,9 @@
 .auth-error{min-height:100vh;padding:40px;display:flex;flex-direction:column}.auth-error .sign-in-content{margin:auto}
 .lead,.muted,.preview-note,.order-reference,.order-meta,.countdown,.order-amount small,.order-actions .text-button,.list-footer,.list-footer>.muted,.bottom-note,.workspace-footer,.workspace-header,.help-card p,.faq p,.ledger th,.ledger td small,.lookup-dialog>p,.detail-list dt,.detail-amount small,.wallet-balance+section .muted{color:#65735f}.tab,.search-field .icon,.list-tools .quiet-button,.account-person small,.workspace-label,.summary-card>div,.summary-card>small,.sidebar-note p,.example-accounts,.example-accounts small{color:#63735a}.countdown.expired{color:#a46242}.status-pill{color:#8d6228}.status-paid,.status-fulfilling,.status-fulfilled{color:#4f7141}.status-cancelled,.status-refunded{color:#6c7165}.detail-note{color:#5e724f}
 @media(max-width:760px){.sidebar{position:relative}.sidebar-bottom{display:block;position:absolute;top:17px;right:20px}.sidebar-bottom .account-person,.sidebar-bottom>.preview-note{display:none}.sidebar-bottom .signout{font-size:11px}.nav-button{font-size:11px}.tabs .tab{font-size:10px}.order-title{font-size:12px}.order-meta{font-size:9px}.order-reference{font-size:10px}.order-amount{font-size:13px}.order-actions .primary{font-size:10px}.order-actions .text-button{font-size:9px}.status-pill{font-size:9px}}
+
+/* Password visibility control */
+.password-field{position:relative;margin-bottom:20px}
+#login-form .password-field input{margin-bottom:0;padding-right:76px}
+.password-toggle{position:absolute;right:8px;top:5px;min-height:34px;min-width:52px;padding:6px 8px;border:0;border-radius:4px;background:transparent;color:var(--forest);font-size:12px;font-weight:600}
+.password-toggle:hover{background:#eef2e9}
