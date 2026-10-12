@@ -8,10 +8,11 @@
 
 ## Task description
 
-Compare Ada and Ben on one owned-order endpoint and two mutations, then deliver a source-linked access matrix and severity/repair recommendation.
+I am investigating whether one authenticated customer can read or change another customer’s order. My goal is to provide the security reviewer and account-service owner with a source-linked access matrix and an evidence-based severity and repair recommendation.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `access-matrix.csv`
 - `ownership-finding.md`
 - `access-response-evidence.png`

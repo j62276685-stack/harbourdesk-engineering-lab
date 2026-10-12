@@ -8,10 +8,11 @@
 
 ## Task description
 
-Extend a frozen staging migration with deterministic canonical identities and aliases, then demonstrate the complete eight-row reconciliation and unique-email constraint.
+I am investigating how staged customer records should map to canonical identities and aliases. My goal is to provide the customer-data owner with a verified migration that accounts for every source row and enforces the required unique-email constraint.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `customer-canonicalization.patch`
 - `customer-coverage.csv`
 - `customer-identity-checks.md`

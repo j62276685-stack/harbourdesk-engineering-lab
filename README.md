@@ -1,50 +1,37 @@
 # HarbourDesk
 
-A local customer portal for a fictional shop: orders, payment details, wallet history, and collection guidance. Python 3.9+ runs the application without additional packages. Git is needed to create independent task copies and for the review/merge tasks.
+One application containing the task errors. Work through them in order; each fix carries forward. All task workspaces edit the same code and use the same database.
 
-## Run the application
+## Run
 
-Double-click **HarbourDesk.command**, or open this folder in a terminal and run:
+Double-click [HarbourDesk.command](HarbourDesk.command), or run `./lab serve` from this folder. Open **http://localhost:8010** in Firefox. The identity provider runs at **http://127.0.0.1:8011**. Stop with Control-C and restart after changing Python code.
 
-```sh
-./lab serve
-```
-
-Open **http://localhost:8010** in Firefox. The local identity provider runs at **http://127.0.0.1:8011**. Stop the application with Control-C. The launcher creates the database on first use and preserves it on later launches.
+Python 3.9+ is required. Git is used for changes, review and merge tasks. No extra packages are needed.
 
 | Account | Email | Password |
 |---|---|---|
 | Ada | ada@example.test | practice-only |
 | Ben | ben@example.test | practice-only |
 
-The database is `runtime/lab.sqlite3`. The default clock is fixed at 2026-10-06 09:00 UTC so the task cases stay reproducible. `LAB_NOW` sets another time; `LAB_TICK=1` advances it. `LAB_DB` selects a different database.
+The shared database is `runtime/lab.sqlite3`. It is created once and kept between tasks. The clock defaults to 2026-10-06 09:00 UTC; `LAB_NOW` changes it and `LAB_TICK=1` advances it. Use a separate `LAB_DB` only for disposable experiments.
 
-## Choose a task
+## Work through the tasks
 
-Read the [task list](tasks/INDEX.md). Each task folder contains the **reported error or request**, relevant code, reproduction steps, required inputs and completion criteria. The linked session descriptions specify the scope, apps, outputs and checks. [Task 1.1](sessions/01.1/GOAL.md) contains the revised description.
+1. Open a workspace from the [task list](tasks/INDEX.md) in VS Code.
+2. Read its problem brief and session description. Start with [Task 1.1](sessions/01.1/GOAL.md).
+3. Use **Terminal → Run Task → Select session** to choose the recording session. The command-line equivalent is `./lab start 01 --session 01.1`.
+4. Inspect and fix the files under **Application**. Save outputs in the task's `outcomes/` folder; captures go there automatically.
+5. Verify the fix and commit it in GitHub Desktop before moving to the next task.
 
-For an independent task copy:
+The workspace folders are views of this project. Selecting a task keeps the current code, database and earlier fixes.
 
-```sh
-./lab start 01 --session 01.1
-```
+## Checks and task tools
 
-Open the printed folder and read `TASK.md` and `evidence/PROBLEM.md`. Work on its application files; save your deliverables in `outcomes/`. Existing task folders are never overwritten; use `--destination /absolute/path` for another attempt. Stop the running application before launching a task copy on the same ports.
+Run `./lab test` or use the task menu for tests and evidence capture. Probes use disposable data to inspect your current code. Database captures and worker controls use the shared runtime database.
 
-## Files and checks
+- Task 11: `./lab seed-large --rows 150000`, then `./lab benchmark`.
+- Task 17: select task 17, then `./lab setup-review`; compare its review branches without changing the application.
+- Task 18: select task 18, commit earlier work, then `./lab setup-merge`; resolve the conflict in the shared application.
+- Task 19: use `./lab worker status`, `tick`, `control --mode transient --failures 2`, or `requeue --job ID`.
 
-| Location | Purpose |
-|---|---|
-| `app/` | Python application, SQLite schema and seed data |
-| `web/` | Customer portal and identity-provider interface |
-| `tests/` | Existing behavior checks |
-| `tasks/` | Twenty reported problems and their input files |
-| `sessions/` | Thirty-nine task descriptions |
-| `docs/` | Product rules, API and data dictionary needed for the tasks |
-| `tools/`, [lab](lab), [lab.py](lab.py) | Launch, task preparation and evidence tools |
-
-Run `./lab test` for the existing tests. Use VS Code’s **Terminal → Run Task** menu for launch, tests, and evidence capture. Capture actions require a selected task workspace and save files under `outcomes/evidence/`.
-
-Task helpers: `./lab probe NN`; `./lab seed-large --rows 150000` and `./lab benchmark` for task 11; `./lab setup-review` for task 17; `./lab setup-merge` for task 18; and `./lab worker status|tick|control|requeue` for task 19. Worker control accepts `--mode healthy|transient|permanent --failures N`; requeue accepts `--job ID`.
-
-The application retains the intentional errors described in the tasks. Passing existing tests does not establish that those errors have been repaired. The [product rules](docs/PRODUCT.md), [API](docs/API.md) and [data dictionary](docs/DATA-MODEL.md) define the expected behavior. All accounts and records are fictional, with no live payments or messages. Inputs were AI-generated before recording. Recording Ideas still need Odin approval before Studio creates their tasks.
+Read the [product rules](docs/PRODUCT.md), [API](docs/API.md) and [data dictionary](docs/DATA-MODEL.md) when needed. Existing tests cover working behavior; each task supplies checks for its error. Accounts and records are fictional. Inputs were AI-generated before recording. Get each Idea approved in Odin before recording its Studio task.

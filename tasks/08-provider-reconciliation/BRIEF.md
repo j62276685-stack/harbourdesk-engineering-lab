@@ -2,7 +2,7 @@
 
 ## Error or request
 
-A delayed success arrives for a cancelled order, and an older failure response arrives for a locally paid order. Define a reconciliation rule that preserves evidence and avoids accidental fulfilment.
+I am investigating provider observations that contradict cancelled or paid order states. My goal is to provide reconciliation and fulfilment teams with a clear policy and an audited implementation that preserves evidence without triggering unintended fulfilment.
 
 ## Relevant files
 
@@ -13,7 +13,7 @@ A delayed success arrives for a cancelled order, and an older failure response a
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 08`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 08 workspace](../../workspaces/08-provider-reconciliation.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 08`. Review each supplied provider observation and the local seed. Design and document the reconciliation decision before changing code. You may add an audit table and distinguish payment state from order fulfilment state.
 

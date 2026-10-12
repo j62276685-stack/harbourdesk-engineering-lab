@@ -8,10 +8,11 @@
 
 ## Task description
 
-Apply one justified query/index change, compare its plan and warmed performance with the frozen baseline, and deliver the schema change and equivalence evidence.
+I am investigating the query and indexing choices behind the slow recent-order report. My goal is to provide the dashboard owner with a measured optimization and evidence that it returns the same results as the recorded baseline.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `report-optimization.patch`
 - `report-before-after.json`
 - `report-equivalence.md`

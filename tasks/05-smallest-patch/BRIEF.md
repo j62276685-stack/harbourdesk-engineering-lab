@@ -2,7 +2,7 @@
 
 ## Error or request
 
-Pasting a valid search term with spaces returns no order, although typing it manually works. Find the smallest justified repair without changing search authorization or ordering.
+I am investigating a customer report that pasting a search term with surrounding spaces returns no orders. My goal is to provide the maintainer with the smallest verified repair and explain why it preserves search authorization and ordering.
 
 ## Relevant files
 
@@ -12,7 +12,7 @@ Pasting a valid search term with spaces returns no order, although typing it man
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 05`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 05 workspace](../../workspaces/05-smallest-patch.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 05`. Compare the supplied terms against PRODUCT.md. Keep the change limited to the search behavior unless evidence demonstrates another required change.
 

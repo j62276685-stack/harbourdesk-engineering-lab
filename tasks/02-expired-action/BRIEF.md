@@ -2,7 +2,7 @@
 
 ## Error or request
 
-Support says an expired order still displays Pay now and the API accepts payment. Enforce the expiry contract at the interface and service boundary.
+I am investigating a report that expired orders still display a payment option and accept payment requests. My goal is to provide the checkout team with a verified repair that enforces expiry in both the interface and the service.
 
 ## Relevant files
 
@@ -12,7 +12,7 @@ Support says an expired order still displays Pay now and the API accepts payment
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 02`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 02 workspace](../../workspaces/02-expired-action.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 02`. Use Ada in `./lab serve` and compare `ord_expired`, `ord_boundary` and `ord_before`. Inspect the HTTP response and order version before/after an attempt. Use explicit `LAB_NOW` values or an injected test clock.
 

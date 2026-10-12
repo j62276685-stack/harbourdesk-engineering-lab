@@ -8,10 +8,11 @@
 
 ## Task description
 
-Separate receipt/delivery evidence from settlement evidence, compare two plausible explanations and deliver a concrete next-observation plan to operations.
+I am investigating a report that a disputed order may have been paid twice. My goal is to provide the operations manager and support lead with the strongest conclusion the incomplete evidence supports and a concrete plan to distinguish the remaining explanations.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `disputed-charge-evidence.ods`
 - `settlement-investigation.drawio`
 - `disputed-charge-memo.pdf`

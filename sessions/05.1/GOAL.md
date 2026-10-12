@@ -8,10 +8,11 @@
 
 ## Task description
 
-Compare two plausible repair scopes for padded search terms, choose a focused change, and hand the maintainer a verified patch with its scope rationale.
+I am investigating a customer report that pasting a search term with surrounding spaces returns no orders. My goal is to provide the maintainer with the smallest verified repair and explain why it preserves search authorization and ordering.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `search-fix.patch`
 - `search-options.ods`
 - `search-maintainer-note.pdf`

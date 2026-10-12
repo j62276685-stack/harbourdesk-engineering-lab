@@ -8,10 +8,11 @@
 
 ## Task description
 
-Simplify the billing module’s internal structure while keeping invoice_total compatible, then show equivalence against the frozen characterization and input sample.
+I am investigating how to simplify the billing module without changing established invoice totals. My goal is to provide the maintainer with a focused refactor and evidence of compatibility against the recorded characterization checks and input sample.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `billing-refactor.patch`
 - `billing-equivalence.ods`
 - `billing-refactor-rationale.md`

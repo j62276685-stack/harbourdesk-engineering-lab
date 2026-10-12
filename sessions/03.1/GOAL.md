@@ -8,10 +8,11 @@
 
 ## Task description
 
-Normalize the supplied incident fragments into a source-linked timeline, draw the event sequence and provide an operations conclusion that distinguishes facts from missing evidence.
+I am investigating a morning incident in which customers received duplicate receipts. My goal is to provide the incident commander and support lead with a source-linked timeline and a clear explanation of what the evidence establishes and what remains uncertain.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `incident-evidence.ods`
 - `incident-timeline.drawio`
 - `incident-summary.pdf`

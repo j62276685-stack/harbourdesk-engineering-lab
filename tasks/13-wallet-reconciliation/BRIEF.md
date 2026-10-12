@@ -2,7 +2,7 @@
 
 ## Error or request
 
-Ada’s displayed wallet balance is disputed. Reconcile the cached balance with posted entries, decide what is authoritative, and implement an audited correction that can be safely repeated.
+I am investigating a customer dispute about a wallet balance that differs from its posted transaction history. My goal is to provide finance operations with an evidence-based reconciliation and an audited, repeat-safe correction that preserves the ledger.
 
 ## Relevant files
 
@@ -13,7 +13,7 @@ Ada’s displayed wallet balance is disputed. Reconcile the cached balance with 
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 13`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 13 workspace](../../workspaces/13-wallet-reconciliation.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 13`, query wallet_accounts and wallet_entries, and compare the supplied statement. Preserve the initial extracts. Ben provides a consistent control case.
 

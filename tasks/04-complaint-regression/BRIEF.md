@@ -2,7 +2,7 @@
 
 ## Error or request
 
-A customer reports: “My newest order is in the account but the first screen skips a couple of orders. Next page looks odd too.” Turn this into a deterministic regression test, then repair the identified behavior.
+I am investigating a customer report that the first page of orders skips records and later pages look incorrect. My goal is to provide the account product owner with a deterministic regression test, a focused pagination repair and evidence that the expected records now appear.
 
 ## Relevant files
 
@@ -12,7 +12,7 @@ A customer reports: “My newest order is in the account but the first screen sk
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 04`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 04 workspace](../../workspaces/04-complaint-regression.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 04`, inspect Ada’s ordered IDs with `./lab sql`, and compare `/api/orders` with pages of size two. Establish a precise expected result from PRODUCT.md before writing your test.
 

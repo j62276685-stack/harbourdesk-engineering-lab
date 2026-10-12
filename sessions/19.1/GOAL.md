@@ -8,10 +8,11 @@
 
 ## Task description
 
-Inspect one historical alert and the worker/queue contract, then deliver an executable on-call diagnosis/recovery runbook with stopping and success criteria.
+I am investigating a recurring notification outage that leaves messages pending in the queue. My goal is to provide the on-call engineer with a practical diagnosis and recovery runbook that defines safe actions, stopping conditions and checks for restored queue progress.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `notification-runbook.pdf`
 - `notification-runbook.odt`
 - `runbook-command-checks.md`

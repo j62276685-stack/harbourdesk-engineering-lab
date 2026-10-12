@@ -1,6 +1,6 @@
 # Data dictionary and seed inventory
 
-The executable schema is [app/schema.sql](../app/schema.sql); [app/db.py](../app/db.py) creates the synthetic initial rows. Tables live in your own workspace's `runtime/lab.sqlite3`. Use a new workspace or an explicit disposable `LAB_DB` for destructive experiments.
+The executable schema is [app/schema.sql](../app/schema.sql); [app/db.py](../app/db.py) creates the synthetic initial rows. Tables live in the shared `runtime/lab.sqlite3`. Use an explicit disposable `LAB_DB` for destructive experiments; keep the shared database for normal work.
 
 | Table | Key/important fields | Baseline seed | Purpose |
 |---|---|---:|---|

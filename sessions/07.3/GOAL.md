@@ -8,10 +8,11 @@
 
 ## Task description
 
-Design a bounded failure injection around a durable write, run it against the supplied or your candidate handler, and deliver a repeatability/rollback verdict.
+I am investigating whether an interrupted webhook handler can recover safely when the provider redelivers the event. My goal is to provide the payments engineering lead with a failure-injection verdict showing whether durable effects are rolled back or completed without duplication.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `webhook-recovery-cases.ods`
 - `webhook-recovery-verdict.pdf`
 - `webhook-interruption-evidence.json`

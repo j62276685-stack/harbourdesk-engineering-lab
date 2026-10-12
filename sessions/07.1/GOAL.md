@@ -8,10 +8,11 @@
 
 ## Task description
 
-Reproduce a two-delivery race and compare its durable effects, then deliver an invariant/transaction review for the payments team.
+I am investigating whether simultaneous deliveries of the same payment event create duplicate business effects. My goal is to provide the payments engineering lead with reproducible race evidence and a clear account of the transaction boundary needed to prevent duplication.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `webhook-invariants.ods`
 - `webhook-race-review.pdf`
 - `webhook-race-observation.json`

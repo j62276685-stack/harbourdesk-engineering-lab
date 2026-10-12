@@ -1,6 +1,5 @@
 __pycache__/
 *.pyc
 runtime/
-workspaces/
 outcomes/
 .DS_Store

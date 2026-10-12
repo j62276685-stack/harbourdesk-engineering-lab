@@ -13,7 +13,7 @@ def run(number, capture_directory=None):
     from app.billing import invoice_total
     from app.provider import ScriptedProvider, ProviderFailure
     if number in {3,14,17,18,20}:
-        print("Read the task brief and its inputs (TASK.md and evidence/ in a task workspace). This task uses documents or Git evidence; no automated verdict is supplied.")
+        print("Read this task’s BRIEF.md and inputs/ folder. This task uses documents or Git evidence; no automated verdict is supplied.")
         return
     if number==11:
         print("Run ./lab seed-large --rows 150000, then ./lab benchmark. Save the printed plan, digest and measurements.")

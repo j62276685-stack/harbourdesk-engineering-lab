@@ -8,10 +8,11 @@
 
 ## Task description
 
-Characterize the legacy billing order and selected threshold/rounding cases, then deliver a refactor safety matrix with executable checks.
+I am investigating a billing module whose calculation order and rounding rules are difficult to follow. My goal is to provide the maintainer with executable characterization checks and a safety matrix that defines the pricing behavior a refactor must preserve.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `billing-characterization.patch`
 - `billing-characterization.ods`
 - `billing-safety-contract.md`

@@ -2,7 +2,7 @@
 
 ## Error or request
 
-Two delivery-pricing changes conflict: free local delivery at a threshold and a remote-region surcharge. Resolve the merge so both business requirements survive.
+I am investigating conflicting delivery-pricing changes for free local delivery and a remote-region surcharge. My goal is to provide the release maintainer with a completed merge that preserves both business rules and passes both branches’ checks.
 
 ## Relevant files
 
@@ -12,9 +12,9 @@ Two delivery-pricing changes conflict: free local delivery at a threshold and a 
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 18`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 18 workspace](../../workspaces/18-merge-intent.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
-Run `./lab setup-merge` in the pristine task 18 workspace. It creates local branches free-delivery and remote-delivery and leaves a real Git conflict. Inspect both branch changes and the generated tests. Git must be installed for this task.
+Run `./lab setup-merge` after committing your earlier fixes. It creates local branches free-delivery and remote-delivery and leaves a real Git conflict. Inspect both branch changes and the generated tests. Git must be installed for this task.
 
 ## Completion criteria
 

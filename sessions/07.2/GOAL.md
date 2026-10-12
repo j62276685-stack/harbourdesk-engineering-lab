@@ -8,10 +8,11 @@
 
 ## Task description
 
-Implement one durable event-application boundary for matching success events and verify sequential/concurrent delivery before handing over the change.
+I am investigating the webhook processing path that can apply a successful payment event more than once. My goal is to provide the payments engineering lead with a verified atomic repair that preserves one payment effect under sequential and concurrent delivery.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `webhook-atomicity.patch`
 - `webhook-effect-checks.md`
 - `webhook-durable-evidence.csv`

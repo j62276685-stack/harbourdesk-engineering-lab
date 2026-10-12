@@ -8,10 +8,11 @@
 
 ## Task description
 
-Run a bounded transient/sustained outage drill against the local queue, test recovery and sent-job safety, and publish a verified on-call handoff.
+I am investigating whether the notification runbook handles transient outages, sustained failures and recovery safely. My goal is to provide the on-call engineer with a tested drill verdict showing queue progress, sent-message protection and clear escalation conditions.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `notification-drill.ods`
 - `notification-drill-verdict.pdf`
 - `notification-drill-evidence.json`

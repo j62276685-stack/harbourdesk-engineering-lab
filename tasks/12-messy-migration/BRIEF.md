@@ -2,7 +2,7 @@
 
 ## Error or request
 
-The legacy customer import contains mixed-case emails, padding, duplicates, nulls and invalid values. Migrate to a canonical customer identity while preserving every source record and providing recovery.
+I am investigating a legacy customer import containing inconsistent formats, duplicates and invalid records. My goal is to provide the customer-data owner with a verified migration that preserves source records, creates canonical identities, quarantines invalid data and supports rollback.
 
 ## Relevant files
 
@@ -14,7 +14,7 @@ The legacy customer import contains mixed-case emails, padding, duplicates, null
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 12`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 12 workspace](../../workspaces/12-messy-migration.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 12` on disposable data and inspect the raw eight-row fixture. Use a fresh LAB_DB copy for each destructive experiment. The target contract defines canonicalization, quarantine and count reconciliation.
 

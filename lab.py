@@ -1,9 +1,8 @@
-"""Run HarbourDesk and prepare independent task copies. No third-party packages."""
+"""One HarbourDesk application with task-specific workspace views."""
 import argparse
 import hashlib
 import json
 import os
-import re
 import shutil
 import statistics
 import subprocess
@@ -22,71 +21,45 @@ def initialize_if_missing():
     if not db.database_path().exists():
         db.initialize()
 
-def selected_number():
-    path = ROOT / "exercise.json"
-    if not path.exists():
-        raise SystemExit("Choose a task with ./lab start NN, or supply its number to ./lab probe NN.")
-    return json.loads(path.read_text())["number"]
-
-def copy_task_document(source, target, task, destination, remove_sessions=False):
-    text = source.read_text()
-    if remove_sessions:
-        text = text.split("\n## Task sessions", 1)[0].rstrip() + "\n"
-    def relocate(match):
-        label, link = match.groups()
-        if link.startswith(("http:", "https:", "#")):
-            return match.group(0)
-        original = (source.parent / link).resolve()
-        try:
-            relative = original.relative_to(task / "inputs")
-            mapped = destination / "evidence/inputs" / relative
-        except ValueError:
-            try:
-                relative = original.relative_to(ROOT)
-            except ValueError:
-                return match.group(0)
-            mapped = destination / relative
-        if not mapped.exists() and original.is_file():
-            return f"[{label}]({original})"
-        return f"[{label}]({Path(os.path.relpath(mapped, target.parent)).as_posix()})"
-    text = re.sub(r"\[([^\]]+)\]\(([^\)]+)\)", relocate, text)
-    target.write_text(text)
-
-def start(number, destination=None, session_id=None):
-    if (ROOT / "exercise.json").exists():
-        raise SystemExit("Create task copies from the project's top-level directory.")
-    task = next(iter(sorted((ROOT / "tasks").glob(f"{number:02d}-*"))), None)
-    if not task:
+def task_directory(number):
+    directory = next(iter(sorted((ROOT / "tasks").glob(f"{number:02d}-*"))), None)
+    if directory is None:
         raise SystemExit("Choose a task from 1 to 20.")
+    return directory
+
+def task_context():
+    selected = ROOT / "runtime/current-task.json"
+    saved = json.loads(selected.read_text()) if selected.exists() else {}
+    override = os.environ.get("HD_TASK")
+    try:
+        number = int(override) if override else int(saved["number"])
+    except (ValueError, KeyError):
+        raise SystemExit("Choose a task with ./lab start NN, or open its workspace.")
+    task_directory(number)
+    session = saved.get("session") if saved.get("number") == number else None
+    return {"number": number, "session": session, "clock": "2026-10-06T09:00:00Z"}
+
+def selected_number():
+    return task_context()["number"]
+
+def start(number, session_id=None):
+    task = task_directory(number)
     goal = ROOT / "sessions" / str(session_id) / "GOAL.md" if session_id else task / "BRIEF.md"
     if session_id and (not goal.is_file() or not session_id.startswith(f"{number:02d}.")):
-        raise SystemExit("The session must exist and belong to the chosen task, for example 01.1.")
-    label = f"{session_id}-{task.name[3:]}" if session_id else task.name
-    dest = Path(destination).expanduser().resolve() if destination else ROOT / "workspaces" / label
-    if dest.exists():
-        raise SystemExit(f"Destination already exists: {dest}. Use --destination for another copy.")
-    dest.mkdir(parents=True)
-    for name in ("app", "web", "tests", "tools", "docs", ".vscode"):
-        shutil.copytree(ROOT / name, dest / name, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
-    for name in ("lab", "lab.py", ".gitignore"):
-        shutil.copy2(ROOT / name, dest / name)
-    shutil.copytree(task / "inputs", dest / "evidence/inputs")
-    for source in (task / "inputs").glob("*.md"):
-        copy_task_document(source, dest / "evidence/inputs" / source.name, task, dest)
-    copy_task_document(task / "BRIEF.md", dest / "evidence/PROBLEM.md", task, dest, True)
-    copy_task_document(goal, dest / "TASK.md", task, dest, not session_id)
-    (dest / "exercise.json").write_text(json.dumps({"number": number, "session": session_id, "clock": "2026-10-06T09:00:00Z"}, indent=2) + "\n")
-    (dest / "outcomes").mkdir()
-    result = subprocess.run([sys.executable, str(dest / "lab.py"), "init"], cwd=dest)
-    if result.returncode:
-        raise SystemExit(result.returncode)
-    git("init", "-b", "exercise", cwd=dest)
-    git("config", "user.name", "HarbourDesk", cwd=dest)
-    git("config", "user.email", "practice@example.test", cwd=dest)
-    git("add", ".", cwd=dest)
-    git("commit", "-m", "Task starting source", cwd=dest)
-    (dest / "runtime/baseline-revision.txt").write_text(git("rev-parse", "HEAD", cwd=dest).stdout.strip() + "\n")
-    print(f"Ready: {dest}\nOpen TASK.md, then run ./lab serve or use Terminal > Run Task in VS Code.")
+        raise SystemExit("The session must belong to the task, for example 01.1.")
+    runtime = ROOT / "runtime"
+    runtime.mkdir(exist_ok=True)
+    metadata = {"number": number, "session": session_id, "clock": "2026-10-06T09:00:00Z"}
+    (runtime / "current-task.json").write_text(json.dumps(metadata, indent=2) + "\n")
+    baselines = runtime / "task-baselines"
+    baselines.mkdir(exist_ok=True)
+    baseline = baselines / f"{session_id or f'{number:02d}'}.txt"
+    if not baseline.exists():
+        result = git("rev-parse", "HEAD", check=False)
+        if result.returncode == 0:
+            baseline.write_text(result.stdout.strip() + "\n")
+    print(f"Workspace: {ROOT / 'workspaces' / (task.name + '.code-workspace')}\nRead: {goal}\nShared application: {ROOT}\nDatabase: {runtime / 'lab.sqlite3'}")
+
 
 def git_executable():
     explicit = os.environ.get("LAB_GIT")
@@ -106,22 +79,35 @@ def git(*args, cwd=ROOT, check=True):
     return subprocess.run([git_executable(),*args],cwd=cwd,check=check,text=True,capture_output=True)
 
 def setup_review():
-    if json.loads((ROOT/"exercise.json").read_text())["number"] != 17:
-        raise SystemExit("This command prepares the supplied task 17 candidate only.")
-    if git("status","--porcelain","--","app","web","tests").stdout.strip():
-        raise SystemExit("Use a fresh, clean workspace for the review candidate.")
-    git("branch","refund-baseline")
-    git("checkout","-b","proposed-refund")
-    shutil.copy2(ROOT/"evidence/inputs/refunds_candidate.py",ROOT/"app/refunds.py")
-    git("add","app/refunds.py")
-    git("commit","-m","Propose support-form refund conversion")
-    print("Local refund-baseline and proposed-refund revisions are ready for review. No review finding was supplied.")
+    if selected_number() != 17:
+        raise SystemExit("Select task 17 first: ./lab start 17")
+    if git("status", "--porcelain", "--", "app", "web", "tests").stdout.strip():
+        raise SystemExit("Commit your application changes before preparing the review branches.")
+    for branch in ("refund-baseline", "proposed-refund"):
+        if git("show-ref", "--verify", f"refs/heads/{branch}", check=False).returncode == 0:
+            raise SystemExit(f"Branch {branch} already exists; use it for the review.")
+    # Build a candidate Git revision without checking out or replacing the shared application.
+    import tempfile
+    base = git("rev-parse", "HEAD").stdout.strip()
+    candidate = task_directory(17) / "inputs/refunds_candidate.py"
+    blob = git("hash-object", "-w", str(candidate)).stdout.strip()
+    with tempfile.TemporaryDirectory() as temporary:
+        environment = dict(os.environ, GIT_INDEX_FILE=str(Path(temporary) / "index"))
+        def index_git(*arguments):
+            return subprocess.run([git_executable(), *arguments], cwd=ROOT, env=environment, check=True, text=True, capture_output=True).stdout.strip()
+        index_git("read-tree", base)
+        index_git("update-index", "--add", "--cacheinfo", f"100644,{blob},app/refunds.py")
+        candidate_tree = index_git("write-tree")
+        commit = index_git("commit-tree", candidate_tree, "-p", base, "-m", "Propose support-form refund conversion")
+    git("branch", "refund-baseline", base)
+    git("branch", "proposed-refund", commit)
+    print("Review refund-baseline and proposed-refund in GitHub Desktop. The shared application and current branch are unchanged.")
 
 def setup_merge():
-    if json.loads((ROOT/"exercise.json").read_text())["number"] != 18:
+    if selected_number() != 18:
         raise SystemExit("This command is for task 18 only.")
     if git("status","--porcelain","--","app","web","tests").stdout.strip():
-        raise SystemExit("Workspace has changes. Preserve/commit them before preparing the merge; use a fresh task 18 workspace if needed.")
+        raise SystemExit("Commit your application changes before preparing the delivery merge.")
     base=git("rev-parse","HEAD").stdout.strip()
     git("checkout","-b","free-delivery")
     (ROOT/"app/shipping.py").write_text('def quote(subtotal_minor, region="local"):\n    return 0 if subtotal_minor >= 25000 else 1500\n')
@@ -145,7 +131,7 @@ def seed_large(count):
     with db.connect() as conn:
         existing = conn.execute("SELECT COUNT(*) FROM orders WHERE id LIKE 'bench_%'").fetchone()[0]
         if existing:
-            raise SystemExit(f"Benchmark data already present ({existing} rows). Use a fresh workspace/database for another size.")
+            raise SystemExit(f"Benchmark data already present ({existing} rows). Keep this dataset for the before/after comparison.")
         batch = []
         for i in range(count):
             batch.append((f"bench_{i:07d}",1 if i%5==0 else 2,"paid" if i%7==0 else "pending_payment",100+i%100000,"NGN",
@@ -173,7 +159,7 @@ def main():
     for name in ("list", "init", "test", "setup-review", "setup-merge", "migrate"):
         commands.add_parser(name)
     p = commands.add_parser("start")
-    p.add_argument("number", type=int); p.add_argument("--session"); p.add_argument("--destination")
+    p.add_argument("number", type=int); p.add_argument("--session")
     for name in ("serve", "preview"):
         p = commands.add_parser(name)
         p.add_argument("--port", type=int, default=8010); p.add_argument("--provider-port", type=int, default=8011)
@@ -189,10 +175,10 @@ def main():
     p.add_argument("--job", type=int)
     args = parser.parse_args()
     if args.command == "list":
-        print((ROOT / "tasks/INDEX.md").read_text() if (ROOT / "tasks/INDEX.md").exists() else (ROOT / "TASK.md").read_text())
+        print((ROOT / "tasks/INDEX.md").read_text() if (ROOT / "tasks/INDEX.md").exists() else (ROOT / "README.md").read_text())
         return
     if args.command == "start":
-        start(args.number, args.destination, args.session); return
+        start(args.number, args.session); return
     from app import db
     if args.command == "init":
         print(f"Initialized {db.initialize()}")

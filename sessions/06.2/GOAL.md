@@ -8,10 +8,11 @@
 
 ## Task description
 
-Repair classification for the supplied amount/decline/outage/timeout cases and produce a narrowly reviewed patch with HTTP evidence.
+I am investigating the payment code that maps different provider failures to the same misleading response. My goal is to provide the checkout team with a verified classification repair and HTTP evidence that each supported failure receives the correct status and message.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `error-mapping.patch`
 - `error-response-evidence.md`
 - `error-check-results.json`

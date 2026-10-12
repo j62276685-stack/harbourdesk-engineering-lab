@@ -2,7 +2,7 @@
 
 ## Error or request
 
-Product asks: “Notify people when orders change, but don’t spam them.” Produce a specification that engineers and QA can implement and evaluate. Conflicting stakeholder preferences are provided.
+I am investigating a product request to notify customers about order changes without sending unnecessary messages. My goal is to provide the product and implementation teams with precise notification rules and testable acceptance criteria.
 
 ## Relevant files
 
@@ -14,7 +14,7 @@ Product asks: “Notify people when orders change, but don’t spam them.” Pro
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 14`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 14 workspace](../../workspaces/14-notification-requirements.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Read the notes and examples. Identify decisions required from product, then select explicit provisional defaults where the notes allow them. Do not contact stakeholders or build delivery integration.
 

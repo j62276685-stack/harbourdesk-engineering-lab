@@ -8,10 +8,11 @@
 
 ## Task description
 
-Enforce the ownership check on the selected service boundary and deliver a verified patch covering legitimate and cross-user reads/mutations.
+I am investigating the order-service boundary that permits cross-user access. My goal is to provide the account-service owner with a verified ownership repair that rejects unauthorized reads and changes while preserving legitimate customer access.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `ownership-fix.patch`
 - `ownership-http-checks.md`
 - `ownership-state-evidence.csv`

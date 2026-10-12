@@ -2,7 +2,7 @@
 
 ## Error or request
 
-Review a proposed “support major-unit refund input” PR. Decide whether it preserves the refund API contract and identify any consequential defect with a concrete trigger.
+I am investigating whether a proposed refund conversion change preserves the published amount contract. My goal is to provide the pull-request author and payments engineering lead with a prioritized review, a minimal demonstration of any consequential defect and a justified approval recommendation.
 
 ## Relevant files
 
@@ -15,11 +15,11 @@ Review a proposed “support major-unit refund input” PR. Decide whether it pr
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 17`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 17 workspace](../../workspaces/17-flawed-pr-review.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Read the baseline, proposed source and diff without applying the PR to your workspace. You can import the candidate module from its file path into a disposable test to compare behavior. This is a local review artifact, not a live GitHub PR.
 
-For the branch comparison in session 17.1, run `./lab setup-review` in a fresh task workspace; it creates the supplied local candidate and baseline branches.
+For the branch comparison in session 17.1, run `./lab setup-review` after committing your earlier fixes; it creates review branches without changing the shared application.
 
 ## Completion criteria
 

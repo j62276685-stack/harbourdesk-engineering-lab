@@ -2,7 +2,7 @@
 
 ## Error or request
 
-Use the two synthetic accounts to investigate whether a customer can access an order belonging to another customer. Repair the ownership boundary and verify legitimate access.
+I am investigating whether an authenticated customer can access another customer’s order. My goal is to provide the security reviewer and account-service owner with evidence of the access boundary and a verified repair that preserves legitimate access.
 
 ## Relevant files
 
@@ -12,7 +12,7 @@ Use the two synthetic accounts to investigate whether a customer can access an o
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 10`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 10 workspace](../../workspaces/10-cross-user-access.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 10`. Use authenticated requests to Ben’s `ord_ben` as Ada and Ben. Investigate read, pay and transition routes separately on fresh seed data so one operation does not conceal another.
 

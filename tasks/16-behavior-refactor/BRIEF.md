@@ -2,7 +2,7 @@
 
 ## Error or request
 
-The invoice-calculation module is hard to reason about. Refactor its structure and interface without changing its established outputs or calculation order.
+I am investigating a billing module that is difficult to maintain without risking pricing changes. My goal is to provide the maintainer with a simpler implementation and evidence that its established calculation order, rounding and outputs are preserved.
 
 ## Relevant files
 
@@ -13,7 +13,7 @@ The invoice-calculation module is hard to reason about. Refactor its structure a
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 16`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 16 workspace](../../workspaces/16-behavior-refactor.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 16`. Capture behavior for the supplied cases and additional threshold/rounding boundaries before changing code. Some legacy rules are awkward; this exercise preserves them.
 

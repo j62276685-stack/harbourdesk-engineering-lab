@@ -8,10 +8,11 @@
 
 ## Task description
 
-Convert the lifecycle contract into a state diagram and transition matrix, resolving same-state/error behavior for the fulfilment and QA teams.
+I am investigating an order lifecycle that permits unclear or invalid state changes. My goal is to provide the fulfilment product owner and QA team with a state diagram and transition matrix defining allowed moves, repeated requests and error behavior.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `order-transition-matrix.ods`
 - `order-lifecycle.drawio`
 - `order-lifecycle-spec.pdf`

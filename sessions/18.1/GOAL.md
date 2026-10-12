@@ -8,10 +8,11 @@
 
 ## Task description
 
-Inspect the two local branch changes and tests, produce the combined delivery rule and acceptance matrix, and hand a bounded merge plan to the maintainer.
+I am investigating a delivery-pricing conflict between free local delivery and a remote-region surcharge. My goal is to provide the product owner and release maintainer with the combined business rule, an acceptance matrix and a merge plan that preserves both changes.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `delivery-intent-matrix.ods`
 - `delivery-merge-plan.pdf`
 - `branch-evidence.md`

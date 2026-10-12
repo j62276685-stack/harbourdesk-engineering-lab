@@ -8,10 +8,11 @@
 
 ## Task description
 
-Challenge a frozen notification policy with eight edge scenarios, tighten ambiguous rules and deliver a testable acceptance specification to QA.
+I am investigating ambiguities in the proposed order-notification policy using eight edge scenarios. My goal is to provide QA and the implementation team with a testable acceptance specification that makes each notification decision explicit.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `notification-acceptance.ods`
 - `notification-acceptance-flow.drawio`
 - `notification-qa-spec.pdf`

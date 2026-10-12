@@ -8,10 +8,11 @@
 
 ## Task description
 
-Choose the retry/stop outcome for the supplied status and duration scripts, calculate the deadline envelope, and deliver an implementable policy with an uncertainty warning.
+I am investigating payment retries that can continue unnecessarily or use changing request keys. My goal is to provide the integration reviewer with an implementable retry policy that defines eligible failures, stable request identity and a bounded time budget.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `retry-decision-table.ods`
 - `retry-state-route.drawio`
 - `retry-policy.pdf`

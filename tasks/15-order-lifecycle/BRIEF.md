@@ -2,7 +2,7 @@
 
 ## Error or request
 
-An order can currently move between states too freely. Model allowed transitions and reject invalid ones without changing order history on rejection.
+I am investigating an order lifecycle that permits invalid state changes. My goal is to provide the fulfilment and QA teams with a clear transition model and a verified implementation that rejects invalid changes without altering order history.
 
 ## Relevant files
 
@@ -13,7 +13,7 @@ An order can currently move between states too freely. Model allowed transitions
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 15`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 15 workspace](../../workspaces/15-order-lifecycle.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 15`. Use the lifecycle contract to create a state diagram or transition table, then implement it at the service boundary and verify through HTTP.
 

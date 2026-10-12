@@ -8,10 +8,11 @@
 
 ## Task description
 
-Use the supplied response fixtures to distinguish customer validation, declines and dependency failures, then deliver a classification table and routing diagram to the checkout team.
+I am investigating why payment-provider failures are presented to customers as invalid amounts. My goal is to provide the payments support lead and checkout team with a clear classification table that distinguishes validation errors, declines, outages and timeouts.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `error-taxonomy.ods`
 - `error-routing.drawio`
 - `error-contract.pdf`

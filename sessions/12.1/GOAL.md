@@ -8,10 +8,11 @@
 
 ## Task description
 
-Classify the supplied customer records, choose the deterministic identity mapping, and produce a migration design with complete source coverage and quarantine reasoning.
+I am investigating a legacy customer import containing inconsistent formats, duplicate identities, missing values and invalid records. My goal is to provide the customer-data owner with a deterministic identity mapping and quarantine plan that accounts for all eight source rows.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `customer-migration-ledger.ods`
 - `customer-target-model.drawio`
 - `customer-migration-design.pdf`

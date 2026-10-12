@@ -10,14 +10,17 @@ from pathlib import Path
 
 def run(action, root, job=None):
     stamp=datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
-    folder=root/"outcomes/evidence"/(stamp+"-"+action)
+    from lab import task_context, task_directory
+    metadata=task_context()
+    output=task_directory(metadata["number"])/"outcomes"
+    if metadata.get("session"): output=output/metadata["session"]
+    folder=output/"evidence"/(stamp+"-"+action)
     folder.mkdir(parents=True,exist_ok=False)
-    metadata=json.loads((root/"exercise.json").read_text())
     revision=subprocess.run([__import__("lab").git_executable(),"rev-parse","HEAD"],cwd=root,text=True,capture_output=True)
     (folder/"capture.json").write_text(json.dumps({"action":action,"session":metadata.get("session"),
         "workstream":metadata["number"],"captured_utc":stamp,"clock":os.environ.get("LAB_NOW",metadata["clock"]),
         "source_revision":revision.stdout.strip(),"source_modified":bool(__import__("lab").git("status","--porcelain","--","app","web","tests").stdout.strip()),
-        "database_scope":"fresh disposable probe copy" if action=="probe" else "current workspace runtime",
+        "database_scope":"fresh disposable probe copy" if action=="probe" else "shared application runtime",
         "limitation":"Record actual interpretation in the deliverable. This capture does not declare acceptance."},indent=2)+"\n")
     if action=="probe":
         from tools.probes import run as probe
@@ -31,9 +34,10 @@ def run(action, root, job=None):
         return 0
     if action=="diff":
         from lab import git
-        baseline=root/"runtime/baseline-revision.txt"
+        baseline_key=metadata.get("session") or str(metadata["number"]).zfill(2)
+        baseline=root/"runtime/task-baselines"/(baseline_key+".txt")
         if not baseline.exists():
-            raise SystemExit("No baseline Git revision is available. Create a fresh task workspace with ./lab start NN.")
+            raise SystemExit("Select this task or session with ./lab start NN before capturing its source diff. Commit completed task changes before selecting the next task.")
         # Comparing the initial revision to the working tree includes committed edits as well as current tracked edits.
         result=git("diff","--binary",baseline.read_text().strip(),"--","app","web","tests")
         (folder/"source-changes.patch").write_text(result.stdout)
@@ -58,5 +62,5 @@ def run(action, root, job=None):
     if action in {"benchmark","worker-status","worker-tick","worker-requeue"} and result.returncode==0:
         (folder/"observation.json").write_text(json.dumps(json.loads(result.stdout),indent=2)+"\n")
     print(result.stdout+result.stderr)
-    print("Saved capture under outcomes/evidence/"+folder.name)
+    print("Saved capture: "+str(folder))
     return result.returncode

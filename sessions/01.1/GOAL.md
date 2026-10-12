@@ -8,13 +8,13 @@
 
 ## Task description
 
-Investigate ticket HD-1101: password sign-in works, but Harbour Identity sign-in fails. Identify where the journey breaks, support the diagnosis with browser, source-code and database evidence, and recommend a focused repair for the engineering and support leads.
+I am investigating a customer report that password sign-in works but signing in through our in-house Identity provider fails. My goal is to provide the engineering lead with an evidence-based diagnosis and a clear explanation of the affected customer journey.
 
 **Recording:** Aim for 30:00 including the intro; allowed length 15:00–45:59.
 
 ## Final deliverable
 
-- `login-diagnosis.md`
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `login-network-evidence.png`
 - `session-observation.csv`
 
@@ -32,6 +32,6 @@ Investigate ticket HD-1101: password sign-in works, but Harbour Identity sign-in
 1. Read the [support ticket](../../tasks/01-login-journey/inputs/support-report.txt) in Visual Studio Code.
 2. In Firefox, compare both sign-in journeys and inspect the redirects and callback request. Keep `localhost:8010` and `127.0.0.1:8011` unchanged.
 3. Trace [app/auth.py](../../app/auth.py) and [app/http.py](../../app/http.py) in Visual Studio Code. Compare the matching session record in DB Browser for SQLite.
-4. Write the diagnosis, capture the callback evidence, and export the session observations. Reopen all three outputs and check the criteria above.
+4. Complete `report.md`, capture the callback evidence, and export the session observations. Reopen all three outputs and check the criteria above.
 
 Narrate what, where and why. Keep relevant content visible, limit window overlap to 25%, and avoid exposing personal information.

@@ -8,10 +8,11 @@
 
 ## Task description
 
-Establish a reproducible performance baseline on the seeded workload, interpret its plan, and hand the dashboard owner a measurement worksheet and focused optimization hypothesis.
+I am investigating a report that the recent-order dashboard becomes slow as order volume grows. My goal is to provide the dashboard owner with a reproducible performance baseline, an explanation of the query plan and a focused optimization hypothesis.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `report-baseline.ods`
 - `report-baseline.json`
 - `report-performance-note.pdf`

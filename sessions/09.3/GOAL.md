@@ -8,10 +8,11 @@
 
 ## Task description
 
-Add wait-budget and rate-limit handling to a frozen eligible-retry implementation, then verify the stop decisions using a fake clock and publish a timing audit.
+I am investigating whether eligible payment retries respect the total deadline and provider rate-limit instructions. My goal is to provide the integration reviewer with a verified timing implementation and a fake-clock audit of its wait and stop decisions.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `retry-budget.patch`
 - `retry-timing-audit.ods`
 - `retry-budget-verdict.md`

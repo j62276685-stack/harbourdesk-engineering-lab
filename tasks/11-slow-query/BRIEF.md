@@ -2,7 +2,7 @@
 
 ## Error or request
 
-The recent-paid-orders dashboard grows slow as orders accumulate. Measure the baseline, make a justified query/index change and show equivalent results.
+I am investigating a report that the recent-order dashboard becomes slow as order volume grows. My goal is to provide the dashboard owner with a measured query optimization and evidence that its results remain equivalent to the baseline.
 
 ## Relevant files
 
@@ -12,7 +12,7 @@ The recent-paid-orders dashboard grows slow as orders accumulate. Measure the ba
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 11`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 11 workspace](../../workspaces/11-slow-query.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab seed-large --rows 150000` once in this workspace, then `./lab benchmark --runs 9`. Save the digest, plan and timing samples. Compare on the same DB/hardware, warm-up and workload after your change.
 

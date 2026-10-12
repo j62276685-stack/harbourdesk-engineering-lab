@@ -8,10 +8,11 @@
 
 ## Task description
 
-Create a bounded staging migration that preserves raw rows and separates normalized-valid from quarantined records, without prematurely cutting over the customer table.
+I am investigating how to normalize the legacy customer import without losing source records or cutting over prematurely. My goal is to provide the customer-data owner with a rerunnable staging migration that preserves raw data and separates valid records from quarantined records.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `customer-staging.patch`
 - `customer-staging-counts.csv`
 - `customer-staging-checks.md`

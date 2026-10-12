@@ -8,10 +8,11 @@
 
 ## Task description
 
-Make a focused session/callback repair, validate normal and invalid-state paths, and deliver a reviewed source patch with browser evidence.
+I am investigating the sign-in failure that prevents customers from returning successfully from our in-house Identity provider. My goal is to provide the engineering lead with a verified repair that restores sign-in while retaining one-use state validation.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `login-fix.patch`
 - `login-verification.md`
 - `provider-success.png`

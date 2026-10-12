@@ -2,7 +2,7 @@
 
 ## Error or request
 
-A manager asks whether a disputed order was paid twice. The attached fragments are intentionally insufficient. Answer responsibly and design the next observation that would distinguish the plausible explanations.
+I am investigating a report that a disputed order may have been paid twice. My goal is to provide the operations manager and support lead with the strongest conclusion the incomplete evidence supports and a concrete plan to distinguish the remaining explanations.
 
 ## Relevant files
 
@@ -16,7 +16,7 @@ A manager asks whether a disputed order was paid twice. The attached fragments a
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 20`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 20 workspace](../../workspaces/20-bounded-uncertainty.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Read only the supplied evidence as the historical incident record. The current starter code is an illustrative system, not proof of which code ran or which financial settlement occurred during that incident.
 

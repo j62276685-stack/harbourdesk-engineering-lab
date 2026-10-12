@@ -8,10 +8,11 @@
 
 ## Task description
 
-Repair only a confirmed cached-balance discrepancy, preserve the ledger, and demonstrate an atomic audit/correction plus safe repetition.
+I am investigating the confirmed discrepancy between the wallet cache and posted transaction history. My goal is to provide finance operations with a repeat-safe correction that updates the cache atomically, records the change and preserves the original ledger.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `wallet-cache-repair.patch`
 - `wallet-audit-evidence.csv`
 - `wallet-repair-checks.md`

@@ -8,10 +8,11 @@
 
 ## Task description
 
-Test one controlled interruption and restore path on a disposable migrated database, then deliver a release decision and executable recovery handoff.
+I am investigating whether the proposed customer migration can recover from an interruption. My goal is to provide the release reviewer with a tested rollback procedure and an evidence-based recommendation on whether the migration is ready for cutover.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `migration-recovery-checks.ods`
 - `migration-recovery-evidence.json`
 - `migration-cutover-verdict.pdf`

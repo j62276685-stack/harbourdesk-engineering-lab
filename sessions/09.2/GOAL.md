@@ -8,10 +8,11 @@
 
 ## Task description
 
-Implement the permanent-failure stop, fixed operation key and attempt limit, then deliver the bounded first part of the retry policy with deterministic call-trace checks.
+I am investigating retry logic that repeats permanent failures and changes the identity of one payment operation. My goal is to provide the integration reviewer with a verified repair that stops ineligible retries, preserves one request key and enforces the attempt limit.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `retry-identity.patch`
 - `retry-call-audit.ods`
 - `retry-identity-checks.md`

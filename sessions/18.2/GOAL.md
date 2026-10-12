@@ -8,10 +8,11 @@
 
 ## Task description
 
-Resolve the single delivery-pricing conflict, preserve both branch tests, and complete a local merge with a reviewed behavior/parentage record.
+I am investigating how to resolve the delivery-pricing conflict without losing either branch’s requirements. My goal is to provide the release maintainer with a completed local merge, passing checks for both pricing rules and a clear record of the resolution.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `delivery-merge-results.ods`
 - `delivery-merge-checks.md`
 - `delivery-merged.patch`

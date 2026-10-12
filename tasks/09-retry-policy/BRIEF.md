@@ -2,7 +2,7 @@
 
 ## Error or request
 
-The charge integration retries failures with changing request keys. Specify and implement a bounded policy for recoverable and permanent failures without increasing duplicate-charge risk.
+I am investigating payment retry behavior that can repeat permanent failures or increase duplicate-charge risk. My goal is to provide the integration reviewer with a verified policy that preserves request identity and bounds attempts, waits and total duration.
 
 ## Relevant files
 
@@ -13,7 +13,7 @@ The charge integration retries failures with changing request keys. Specify and 
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 09`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 09 workspace](../../workspaces/09-retry-policy.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 09`. Use `ScriptedProvider.calls`, an injected sleep recorder, and its optional on_call callback for simulated request duration. Inject a monotonic clock if needed; do not use real waiting in tests.
 

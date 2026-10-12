@@ -8,10 +8,11 @@
 
 ## Task description
 
-Independently calculate Ada’s posted balance, compare the cache and consistent control account, and produce an auditable correction recommendation.
+I am investigating a customer dispute about Ada’s displayed wallet balance. My goal is to provide finance operations with an independently calculated ledger balance, a comparison against the cached balance and an auditable correction recommendation.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `wallet-reconciliation.ods`
 - `wallet-authority.drawio`
 - `wallet-correction-recommendation.pdf`

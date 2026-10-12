@@ -2,7 +2,7 @@
 
 ## Error or request
 
-Operations saw duplicate receipts during a short morning incident. Reconstruct what is supported by the supplied fragments and explain what remains uncertain. Do not patch the application in this task.
+I am investigating a morning incident in which customers received duplicate receipts. My goal is to provide the incident commander and support lead with a source-linked timeline and a clear explanation of what the evidence establishes and what remains uncertain.
 
 ## Relevant files
 
@@ -18,7 +18,7 @@ Operations saw duplicate receipts during a short morning incident. Reconstruct w
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 03`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 03 workspace](../../workspaces/03-incident-timeline.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Read all source files. Normalize times to UTC while retaining original timestamps and source locations. Metrics are minute buckets, not individual events. The source notes describe clock differences and missing intervals.
 

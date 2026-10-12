@@ -2,7 +2,7 @@
 
 ## Error or request
 
-A dependency outage is shown to the customer as an invalid amount. Distinguish local validation failures, declined payments, upstream outages and transport timeouts.
+I am investigating why customers see invalid-amount errors when the payment provider fails. My goal is to provide the checkout and support teams with accurate failure classifications and a verified implementation for validation errors, declines, outages and timeouts.
 
 ## Relevant files
 
@@ -12,7 +12,7 @@ A dependency outage is shown to the customer as an invalid amount. Distinguish l
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 06`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 06 workspace](../../workspaces/06-error-classification.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 06`, then run the additional cases in the supplied JSON through `ScriptedProvider`. Use the classification table in API.md as the public contract.
 

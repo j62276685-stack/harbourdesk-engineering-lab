@@ -2,7 +2,7 @@
 
 ## Error or request
 
-The provider may redeliver the same successful-payment event, including concurrently. Guarantee one business effect despite retries, process interruption and racing deliveries.
+I am investigating whether repeated, concurrent or interrupted payment-event deliveries create duplicate business effects. My goal is to provide the payments engineering lead with a verified processing boundary that applies each successful event once and recovers safely.
 
 ## Relevant files
 
@@ -13,7 +13,7 @@ The provider may redeliver the same successful-payment event, including concurre
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 07`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 07 workspace](../../workspaces/07-duplicate-webhook.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab probe 07`. It schedules two handlers at the same lookup barrier on a disposable DB. Repeat a sequential delivery and inspect payments, webhook_receipts, order version and notification_outbox. Add your own deterministic concurrency and failure-injection tests.
 

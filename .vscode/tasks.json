@@ -4,7 +4,7 @@
     {
       "label": "HarbourDesk: Start application",
       "type": "process",
-      "command": "./lab",
+      "command": "${workspaceFolder}/lab",
       "args": [
         "serve"
       ],
@@ -20,7 +20,7 @@
     {
       "label": "HarbourDesk: Run tests",
       "type": "process",
-      "command": "./lab",
+      "command": "${workspaceFolder}/lab",
       "args": [
         "test"
       ],
@@ -36,7 +36,7 @@
     {
       "label": "HarbourDesk: Capture task probe",
       "type": "process",
-      "command": "./lab",
+      "command": "${workspaceFolder}/lab",
       "args": [
         "record",
         "probe"
@@ -53,7 +53,7 @@
     {
       "label": "HarbourDesk: Capture current database",
       "type": "process",
-      "command": "./lab",
+      "command": "${workspaceFolder}/lab",
       "args": [
         "record",
         "database"
@@ -70,7 +70,7 @@
     {
       "label": "HarbourDesk: Capture source diff",
       "type": "process",
-      "command": "./lab",
+      "command": "${workspaceFolder}/lab",
       "args": [
         "record",
         "diff"
@@ -87,7 +87,7 @@
     {
       "label": "HarbourDesk: Capture report benchmark",
       "type": "process",
-      "command": "./lab",
+      "command": "${workspaceFolder}/lab",
       "args": [
         "record",
         "benchmark"
@@ -104,7 +104,7 @@
     {
       "label": "HarbourDesk: Capture worker status",
       "type": "process",
-      "command": "./lab",
+      "command": "${workspaceFolder}/lab",
       "args": [
         "record",
         "worker-status"
@@ -121,7 +121,7 @@
     {
       "label": "HarbourDesk: Tick worker",
       "type": "process",
-      "command": "./lab",
+      "command": "${workspaceFolder}/lab",
       "args": [
         "record",
         "worker-tick"
@@ -138,7 +138,7 @@
     {
       "label": "HarbourDesk: Requeue unsent job",
       "type": "process",
-      "command": "./lab",
+      "command": "${workspaceFolder}/lab",
       "args": [
         "record",
         "worker-requeue",

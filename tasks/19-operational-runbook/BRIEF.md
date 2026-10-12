@@ -2,7 +2,7 @@
 
 ## Error or request
 
-Notification workers sometimes leave pending messages behind during provider outages. Write and exercise an operational runbook using the local worker controls.
+I am investigating recurring notification failures that leave messages pending during provider outages. My goal is to provide the on-call engineer with a tested diagnosis and recovery runbook that restores queue progress without resending completed messages.
 
 ## Relevant files
 
@@ -13,7 +13,7 @@ Notification workers sometimes leave pending messages behind during provider out
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 19`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 19 workspace](../../workspaces/19-operational-runbook.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab worker status`; then `./lab worker control --mode transient --failures 3` and tick repeatedly. Use permanent and healthy modes for additional drills. The supplied alert is historical; current status is the authoritative drill observation.
 

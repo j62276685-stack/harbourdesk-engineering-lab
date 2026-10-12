@@ -8,10 +8,11 @@
 
 ## Task description
 
-Implement the bounded conflicting-observation policy, preserving its evidence and avoiding accidental fulfilment, then deliver an audited patch and case checks.
+I am investigating how the application applies provider observations that conflict with completed or cancelled orders. My goal is to provide the reconciliation operator with a verified repair that follows the agreed policy, retains an audit trail and avoids unintended fulfilment.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `provider-reconciliation.patch`
 - `reconciliation-audit.csv`
 - `reconciliation-verification.md`

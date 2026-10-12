@@ -8,10 +8,11 @@
 
 ## Task description
 
-Evaluate the proposed refund PR against its compatibility claim, demonstrate a minimal consequential defect and deliver a prioritized review recommendation.
+I am investigating whether a proposed refund conversion change preserves the published amount contract. My goal is to provide the pull-request author and payments engineering lead with a prioritized review, a minimal demonstration of any consequential defect and a justified approval recommendation.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `refund-review-findings.ods`
 - `refund-pr-review.pdf`
 - `refund-review-demonstration.md`

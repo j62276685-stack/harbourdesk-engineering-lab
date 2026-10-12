@@ -8,10 +8,11 @@
 
 ## Task description
 
-Compare the expiry labels, direct request behavior and persisted order changes for three boundary fixtures, then deliver a defect evidence matrix to QA.
+I am investigating a report that expired orders still show a payment option and accept payment requests. My goal is to provide the checkout product owner and QA engineer with an evidence matrix showing the interface, API and database behavior at the expiry boundary.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `expiry-evidence.csv`
 - `expiry-defect.md`
 - `expiry-interface.png`

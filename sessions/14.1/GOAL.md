@@ -8,10 +8,11 @@
 
 ## Task description
 
-Resolve a bounded set of stakeholder tensions into an event/recipient/channel matrix and routing diagram that the implementation team can use.
+I am investigating a product request to notify customers about order changes without sending unnecessary messages. My goal is to provide the product manager, support lead and implementation team with clear event, recipient and channel rules that resolve the supplied stakeholder conflicts.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `notification-rules.ods`
 - `notification-routing.drawio`
 - `notification-rules.pdf`

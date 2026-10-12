@@ -2,7 +2,7 @@
 
 ## Error or request
 
-Password sign-in works, but a customer who chooses Harbour Identity returns to a login error. Prepare browser evidence, diagnose the journey, and make a focused fix.
+I am investigating a customer report that password sign-in works but signing in through our in-house Identity provider fails. My goal is to provide the engineering lead with an evidence-based diagnosis and a verified repair that restores the customer journey while retaining state validation.
 
 ## Relevant files
 
@@ -12,7 +12,7 @@ Password sign-in works, but a customer who chooses Harbour Identity returns to a
 
 ## Reproduce or investigate
 
-From the project root, run `./lab start 01`. Open the printed folder. Run `./lab serve` for browser work or `./lab test` for tests. Inputs are copied to `evidence/inputs/`.
+Open the [Task 01 workspace](../../workspaces/01-login-journey.code-workspace). It uses the shared application and database. Read the inputs above. Run `./lab serve` for browser work or `./lab test` for tests.
 
 Run `./lab serve`. In a fresh browser open `http://localhost:8010`, verify password login, then clear localhost cookies and choose Harbour Identity. On the provider page at `127.0.0.1:8011`, click Continue as Ada. Preserve the network log and compare the successful and failing flows. `./lab probe 01` checks only the service callback.
 

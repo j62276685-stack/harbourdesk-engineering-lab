@@ -8,10 +8,11 @@
 
 ## Task description
 
-Evaluate the cancelled/success and paid/older-failure cases, choose a policy with explicit authority boundaries, and deliver an operator decision table and state diagram.
+I am investigating provider observations that contradict local order state: a success for a cancelled order and an older failure for a paid order. My goal is to provide the reconciliation operator and fulfilment lead with a decision policy that preserves evidence and prevents accidental fulfilment.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `reconciliation-policy.ods`
 - `reconciliation-model.drawio`
 - `reconciliation-decision.pdf`

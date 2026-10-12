@@ -8,10 +8,11 @@
 
 ## Task description
 
-Define the expected first-page result from the contract, write a deterministic failing regression, make a focused repair and provide before/after QA evidence.
+I am investigating a customer report that the first page of orders skips records and later pages look incorrect. My goal is to provide the account product owner with a deterministic regression test, a focused pagination repair and evidence that the expected records now appear.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `pagination-regression.patch`
 - `pagination-qa.md`
 - `page-order-evidence.csv`

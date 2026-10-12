@@ -8,10 +8,11 @@
 
 ## Task description
 
-Implement the declared transition boundary and matrix checks, then provide persisted version/error evidence and a focused reviewed patch.
+I am investigating the transition code that allows orders to move outside the agreed lifecycle. My goal is to provide the fulfilment and QA teams with a verified repair that enforces allowed transitions and preserves order history and version values when a request is rejected.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `order-lifecycle.patch`
 - `order-state-evidence.csv`
 - `order-lifecycle-checks.md`

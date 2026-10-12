@@ -13,7 +13,7 @@ Money is an integer number of minor units: NGN 125.00 is `12500`. Dates are UTC;
 | Ada | 1 | `practice-only` | `ord_active`, `ord_expired`, `ord_boundary`, `ord_before`, `ord_cancelled`, `ord_paid` |
 | Ben | 2 | `practice-only` | `ord_ben` |
 
-Use `ada@example.test` and `ben@example.test`. These passwords and webhook secrets are public synthetic fixtures. A wallet cache may disagree with the append-only ledger; diagnosing that is task 13. Task 11 adds reproducible bulk orders only to its own workspace.
+Use `ada@example.test` and `ben@example.test`. These passwords and webhook secrets are public synthetic fixtures. A wallet cache may disagree with the append-only ledger; diagnosing that is task 13. Task 11 adds reproducible bulk orders to the shared database for the before/after benchmark.
 
 ## Business contracts
 

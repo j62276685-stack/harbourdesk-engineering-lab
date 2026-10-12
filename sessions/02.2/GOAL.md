@@ -8,10 +8,11 @@
 
 ## Task description
 
-Enforce the server deadline and corresponding button state, test a small fixed-clock boundary set, and deliver a checkout patch for review.
+I am investigating the checkout path that allows customers to pay after an order expires. My goal is to provide the checkout team with a verified repair that enforces the server deadline and disables the payment option at the correct time.
 
 ## Final deliverable
 
+- `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `expiry-fix.patch`
 - `expiry-checks.md`
 - `rejected-order-observation.csv`
