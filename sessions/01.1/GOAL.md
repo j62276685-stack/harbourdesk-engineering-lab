@@ -16,7 +16,6 @@ I am investigating a customer report that password sign-in works but signing in 
 
 - `report.md` — use the [report template](../../docs/REPORT-TEMPLATE.md).
 - `login-network-evidence.png`
-- `session-observation.csv`
 
 ## Quality checks
 
@@ -32,6 +31,6 @@ I am investigating a customer report that password sign-in works but signing in 
 1. Read the [support ticket](../../tasks/01-login-journey/inputs/support-report.txt) in Visual Studio Code.
 2. In Firefox, compare both sign-in journeys and inspect the redirects and callback request. Keep `localhost:8010` and `127.0.0.1:8011` unchanged.
 3. Trace [app/auth.py](../../app/auth.py) and [app/http.py](../../app/http.py) in Visual Studio Code. Compare the matching session record in DB Browser for SQLite.
-4. Complete `report.md`, capture the callback evidence, and export the session observations. Reopen all three outputs and check the criteria above.
+4. Complete `report.md` and capture the callback evidence. Reopen both outputs and check the criteria above.
 
 Narrate what, where and why. Keep relevant content visible, limit window overlap to 25%, and avoid exposing personal information.
