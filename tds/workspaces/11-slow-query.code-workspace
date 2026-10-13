@@ -1,0 +1,248 @@
+{
+  "folders": [
+    {
+      "name": "Application",
+      "path": "../.."
+    },
+    {
+      "name": "Task 11",
+      "path": "../tasks/11-slow-query"
+    },
+    {
+      "name": "Session 11.1",
+      "path": "../sessions/11.1"
+    },
+    {
+      "name": "Session 11.2",
+      "path": "../sessions/11.2"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "tds": true
+    },
+    "terminal.integrated.cwd": "${workspaceFolder:Application}",
+    "terminal.integrated.env.osx": {
+      "HD_TASK": "11"
+    },
+    "terminal.integrated.env.linux": {
+      "HD_TASK": "11"
+    },
+    "terminal.integrated.env.windows": {
+      "HD_TASK": "11"
+    },
+    "chat.disableAIFeatures": true
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Task 11: Select session",
+        "type": "process",
+        "command": "${workspaceFolder:Application}/tds/lab",
+        "args": [
+          "start",
+          "11",
+          "--session",
+          "${input:sessionId}"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Application}"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Task 11: Start application",
+        "type": "process",
+        "command": "${workspaceFolder:Application}/tds/lab",
+        "args": [
+          "serve"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Application}",
+          "env": {
+            "HD_TASK": "11"
+          }
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": false,
+          "reveal": "always"
+        }
+      },
+      {
+        "label": "Task 11: Run tests",
+        "type": "process",
+        "command": "${workspaceFolder:Application}/tds/lab",
+        "args": [
+          "test"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Application}",
+          "env": {
+            "HD_TASK": "11"
+          }
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": false,
+          "reveal": "always"
+        }
+      },
+      {
+        "label": "Task 11: Capture task probe",
+        "type": "process",
+        "command": "${workspaceFolder:Application}/tds/lab",
+        "args": [
+          "record",
+          "probe"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Application}",
+          "env": {
+            "HD_TASK": "11"
+          }
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": false,
+          "reveal": "always"
+        }
+      },
+      {
+        "label": "Task 11: Capture current database",
+        "type": "process",
+        "command": "${workspaceFolder:Application}/tds/lab",
+        "args": [
+          "record",
+          "database"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Application}",
+          "env": {
+            "HD_TASK": "11"
+          }
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": false,
+          "reveal": "always"
+        }
+      },
+      {
+        "label": "Task 11: Capture source diff",
+        "type": "process",
+        "command": "${workspaceFolder:Application}/tds/lab",
+        "args": [
+          "record",
+          "diff"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Application}",
+          "env": {
+            "HD_TASK": "11"
+          }
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": false,
+          "reveal": "always"
+        }
+      },
+      {
+        "label": "Task 11: Capture report benchmark",
+        "type": "process",
+        "command": "${workspaceFolder:Application}/tds/lab",
+        "args": [
+          "record",
+          "benchmark"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Application}",
+          "env": {
+            "HD_TASK": "11"
+          }
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": false,
+          "reveal": "always"
+        }
+      },
+      {
+        "label": "Task 11: Capture worker status",
+        "type": "process",
+        "command": "${workspaceFolder:Application}/tds/lab",
+        "args": [
+          "record",
+          "worker-status"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Application}",
+          "env": {
+            "HD_TASK": "11"
+          }
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": false,
+          "reveal": "always"
+        }
+      },
+      {
+        "label": "Task 11: Tick worker",
+        "type": "process",
+        "command": "${workspaceFolder:Application}/tds/lab",
+        "args": [
+          "record",
+          "worker-tick"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Application}",
+          "env": {
+            "HD_TASK": "11"
+          }
+        },
+        "problemMatcher": [],
+        "presentation": {
+          "echo": false,
+          "reveal": "always"
+        }
+      },
+      {
+        "label": "Task 11: Requeue unsent job",
+        "type": "process",
+        "command": "${workspaceFolder:Application}/tds/lab",
+        "args": [
+          "record",
+          "worker-requeue",
+          "--job",
+          "${input:jobId}"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:Application}",
+          "env": {
+            "HD_TASK": "11"
+          }
+        },
+        "problemMatcher": []
+      }
+    ],
+    "inputs": [
+      {
+        "id": "jobId",
+        "type": "promptString",
+        "description": "Job ID from the notification queue"
+      },
+      {
+        "id": "sessionId",
+        "type": "pickString",
+        "description": "Choose the task session",
+        "options": [
+          "11.1",
+          "11.2"
+        ]
+      }
+    ]
+  }
+}
