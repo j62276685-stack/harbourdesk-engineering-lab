@@ -13,17 +13,16 @@ def run(number, capture_directory=None):
     from app.billing import invoice_total
     from app.provider import ScriptedProvider, ProviderFailure
     if number in {3,14,17,18,20}:
-        print("Read this task’s BRIEF.md and inputs/ folder. This task uses documents or Git evidence; no automated verdict is supplied.")
+        print(json.dumps({"status": "unavailable", "reason": "no_automated_diagnostic"}, indent=2))
         return
     if number==11:
-        print("Run ./tds/lab seed-large --rows 150000, then ./tds/lab benchmark. Save the printed plan, digest and measurements.")
+        print(json.dumps({"status": "unavailable", "reason": "benchmark_required"}, indent=2))
         return
     with tempfile.TemporaryDirectory() as folder, patch.dict(os.environ,{"LAB_DB":str(Path(folder)/"probe.sqlite3"),"LAB_NOW":"2026-10-06T09:00:00Z","LAB_TICK":"0"}):
         db.initialize()
         if number==1:
             sid,state=auth.start_provider()
-            result={"callback_with_cookie":auth.finish_provider(sid,state,"synthetic-ada"),
-                    "next_step":"Use ./tds/lab serve and a real browser for the cross-site journey; this probe cannot simulate browser cookie policy."}
+            result={"callback_with_cookie":auth.finish_provider(sid,state,"synthetic-ada")}
         elif number==2:
             result={}
             for identifier in ["ord_expired","ord_boundary","ord_before"]:
@@ -88,7 +87,7 @@ def run(number, capture_directory=None):
             result=[{"input":[amount,tier,coupon,delivery],"output":invoice_total(amount,tier,coupon,delivery)} for amount,tier,coupon,delivery in [(10000,"standard",None,"pickup"),(10000,"member","WELCOME","courier"),(16000,"standard",None,"courier"),(1,"member","WELCOME","pickup")]]
         elif number==19:
             worker.control("transient",2)
-            result={"ticks":[worker.tick() for _ in range(3)],"jobs":worker.status(),"note":"This disposable observation is separate from your runtime database. Use ./tds/lab worker for your runbook drill."}
+            result={"ticks":[worker.tick() for _ in range(3)],"jobs":worker.status()}
         else:
             raise SystemExit("Unknown task")
         if capture_directory:
@@ -98,8 +97,6 @@ def run(number, capture_directory=None):
                 source.backup(target)
             (capture/"observation.json").write_text(json.dumps({
                 "workstream":number,"clock":os.environ["LAB_NOW"],
-                "database":"observed.sqlite3","observation":result,
-                "limitation":"An observation is not an acceptance verdict. This database is a disposable probe copy."
+                "database":"observed.sqlite3","database_scope":"temporary_copy","observation":result
             },indent=2)+"\n")
-            print(f"Saved {capture.name}/observation.json and observed.sqlite3.")
         print(json.dumps(result,indent=2))

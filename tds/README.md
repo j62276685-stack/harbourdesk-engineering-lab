@@ -9,4 +9,13 @@ This folder contains the task [index](tasks/INDEX.md), [session goals](sessions)
 
 The task CLI is `./tds/lab` from the project directory. For example: `./tds/lab serve`, `./tds/lab test`, or `./tds/lab record database`. Run `./tds/lab list` for the task list.
 
+## Interpreting diagnostics
+
+Probe output contains observations only, without coaching or next steps. An observation is not an acceptance verdict. Probes run against a temporary database; recorded probes save that database as `observed.sqlite3` and identify its scope in `observation.json`.
+
+- The login probe checks a callback with a supplied cookie. It cannot simulate browser cookie policy. Use `./tds/lab serve` and a real browser to investigate the cross-site journey.
+- The notification probe uses a temporary queue. Use `./tds/lab worker` for the runbook drill against the application database.
+- Document and Git investigations return `no_automated_diagnostic`; use their briefs and supplied evidence.
+- The reporting probe returns `benchmark_required`. Run `./tds/lab seed-large --rows 150000`, then `./tds/lab benchmark`, and retain the query plan, result digest, and measurements.
+
 Get each Idea approved in Odin before recording its Studio task. Inputs are fictional and were prepared before recording.

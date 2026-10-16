@@ -224,7 +224,7 @@ def main():
             benchmark(args.runs)
         elif args.command == "migrate":
             from app.migration import migrate
-            migrate(); print("Migration completed; verify the rows against the task contract.")
+            migrate(); print("Migration completed.")
         elif args.command == "worker":
             from app import worker
             if args.action == "status": result = worker.status()

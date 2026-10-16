@@ -20,8 +20,7 @@ def run(action, root, job=None):
     (folder/"capture.json").write_text(json.dumps({"action":action,"session":metadata.get("session"),
         "workstream":metadata["number"],"captured_utc":stamp,"clock":os.environ.get("LAB_NOW",metadata["clock"]),
         "source_revision":revision.stdout.strip(),"source_modified":bool(__import__("lab").git("status","--porcelain","--","app","web","tests").stdout.strip()),
-        "database_scope":"fresh disposable probe copy" if action=="probe" else "shared application runtime",
-        "limitation":"Record actual interpretation in the deliverable. This capture does not declare acceptance."},indent=2)+"\n")
+        "database_scope":"temporary_copy" if action=="probe" else "application_runtime"},indent=2)+"\n")
     if action=="probe":
         from tools.probes import run as probe
         probe(metadata["number"],folder/"probe")
@@ -37,7 +36,7 @@ def run(action, root, job=None):
         baseline_key=metadata.get("session") or str(metadata["number"]).zfill(2)
         baseline=root/"tds/runtime/task-baselines"/(baseline_key+".txt")
         if not baseline.exists():
-            raise SystemExit("Select this task or session with ./tds/lab start NN before capturing its source diff. Commit completed task changes before selecting the next task.")
+            raise SystemExit("Source baseline is not configured.")
         # Comparing the initial revision to the working tree includes committed edits as well as current tracked edits.
         result=git("diff","--binary",baseline.read_text().strip(),"--","app","web","tests")
         (folder/"source-changes.patch").write_text(result.stdout)
@@ -46,13 +45,13 @@ def run(action, root, job=None):
         untracked=git("ls-files","--others","--exclude-standard","--","app","web","tests").stdout.splitlines()
         if untracked:
             (folder/"untracked-source-files.txt").write_text("\n".join(untracked)+"\n")
-            print("New source/test files are untracked. Stage reviewed files in GitHub Desktop and export again to include them in the patch.")
-        print("Saved source diff, status and history. Rename/copy the patch to the deliverable's required name after review.")
+            print("Untracked source files are listed in untracked-source-files.txt; the patch includes tracked changes only.")
+        print("Saved source diff, status and history.")
         return 0
     commands={"tests":["test"],"benchmark":["benchmark","--runs","9"],
               "worker-status":["worker","status"],"worker-tick":["worker","tick"]}
     if action=="worker-requeue":
-        if job is None: raise SystemExit("Select a real synthetic job ID with --job.")
+        if job is None: raise SystemExit("A job ID is required (--job).")
         commands[action]=["worker","requeue","--job",str(job)]
     result=subprocess.run([sys.executable,str(root/"tds/lab.py"),*commands[action]],cwd=root,text=True,capture_output=True)
     (folder/"stdout.txt").write_text(result.stdout)
