@@ -11,5 +11,3 @@ Python 3.9+ is required. The SQLite database is stored at `runtime/lab.sqlite3` 
 ## Development
 
 Run `python3 -m unittest discover -s tests -v` for the application tests. See the [product rules](docs/PRODUCT.md), [API](docs/API.md), and [data dictionary](docs/DATA-MODEL.md).
-
-Task briefs, workspaces, inputs, and recording tools are in [tds](tds/README.md).

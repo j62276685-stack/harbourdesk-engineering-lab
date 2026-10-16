@@ -1,27 +1,15 @@
 {
   "folders": [
     {
-      "name": "Application",
+      "name": "HarbourDesk",
       "path": "../.."
-    },
-    {
-      "name": "Task 01",
-      "path": "../tasks/01-login-journey"
-    },
-    {
-      "name": "Session 01.1",
-      "path": "../sessions/01.1"
-    },
-    {
-      "name": "Session 01.2",
-      "path": "../sessions/01.2"
     }
   ],
   "settings": {
     "files.exclude": {
       "tds": true
     },
-    "terminal.integrated.cwd": "${workspaceFolder:Application}",
+    "terminal.integrated.cwd": "${workspaceFolder:HarbourDesk}",
     "terminal.integrated.env.osx": {
       "HD_TASK": "1"
     },
@@ -31,35 +19,24 @@
     "terminal.integrated.env.windows": {
       "HD_TASK": "1"
     },
-    "chat.disableAIFeatures": true
+    "chat.disableAIFeatures": true,
+    "search.exclude": {
+      "**/tds": true
+    },
+    "window.title": "${activeEditorShort}${separator}HarbourDesk${separator}${appName}"
   },
   "tasks": {
     "version": "2.0.0",
     "tasks": [
       {
-        "label": "Task 01: Select session",
+        "label": "Start application",
         "type": "process",
-        "command": "${workspaceFolder:Application}/tds/lab",
-        "args": [
-          "start",
-          "1",
-          "--session",
-          "${input:sessionId}"
-        ],
-        "options": {
-          "cwd": "${workspaceFolder:Application}"
-        },
-        "problemMatcher": []
-      },
-      {
-        "label": "Task 01: Start application",
-        "type": "process",
-        "command": "${workspaceFolder:Application}/tds/lab",
+        "command": "${workspaceFolder:HarbourDesk}/tds/lab",
         "args": [
           "serve"
         ],
         "options": {
-          "cwd": "${workspaceFolder:Application}",
+          "cwd": "${workspaceFolder:HarbourDesk}",
           "env": {
             "HD_TASK": "1"
           }
@@ -71,14 +48,14 @@
         }
       },
       {
-        "label": "Task 01: Run tests",
+        "label": "Run tests",
         "type": "process",
-        "command": "${workspaceFolder:Application}/tds/lab",
+        "command": "${workspaceFolder:HarbourDesk}/tds/lab",
         "args": [
           "test"
         ],
         "options": {
-          "cwd": "${workspaceFolder:Application}",
+          "cwd": "${workspaceFolder:HarbourDesk}",
           "env": {
             "HD_TASK": "1"
           }
@@ -90,15 +67,15 @@
         }
       },
       {
-        "label": "Task 01: Capture task probe",
+        "label": "Run diagnostics",
         "type": "process",
-        "command": "${workspaceFolder:Application}/tds/lab",
+        "command": "${workspaceFolder:HarbourDesk}/tds/lab",
         "args": [
           "record",
           "probe"
         ],
         "options": {
-          "cwd": "${workspaceFolder:Application}",
+          "cwd": "${workspaceFolder:HarbourDesk}",
           "env": {
             "HD_TASK": "1"
           }
@@ -110,15 +87,15 @@
         }
       },
       {
-        "label": "Task 01: Capture current database",
+        "label": "Capture current database",
         "type": "process",
-        "command": "${workspaceFolder:Application}/tds/lab",
+        "command": "${workspaceFolder:HarbourDesk}/tds/lab",
         "args": [
           "record",
           "database"
         ],
         "options": {
-          "cwd": "${workspaceFolder:Application}",
+          "cwd": "${workspaceFolder:HarbourDesk}",
           "env": {
             "HD_TASK": "1"
           }
@@ -130,15 +107,15 @@
         }
       },
       {
-        "label": "Task 01: Capture source diff",
+        "label": "Capture source diff",
         "type": "process",
-        "command": "${workspaceFolder:Application}/tds/lab",
+        "command": "${workspaceFolder:HarbourDesk}/tds/lab",
         "args": [
           "record",
           "diff"
         ],
         "options": {
-          "cwd": "${workspaceFolder:Application}",
+          "cwd": "${workspaceFolder:HarbourDesk}",
           "env": {
             "HD_TASK": "1"
           }
@@ -150,15 +127,15 @@
         }
       },
       {
-        "label": "Task 01: Capture report benchmark",
+        "label": "Capture report benchmark",
         "type": "process",
-        "command": "${workspaceFolder:Application}/tds/lab",
+        "command": "${workspaceFolder:HarbourDesk}/tds/lab",
         "args": [
           "record",
           "benchmark"
         ],
         "options": {
-          "cwd": "${workspaceFolder:Application}",
+          "cwd": "${workspaceFolder:HarbourDesk}",
           "env": {
             "HD_TASK": "1"
           }
@@ -170,15 +147,15 @@
         }
       },
       {
-        "label": "Task 01: Capture worker status",
+        "label": "Capture worker status",
         "type": "process",
-        "command": "${workspaceFolder:Application}/tds/lab",
+        "command": "${workspaceFolder:HarbourDesk}/tds/lab",
         "args": [
           "record",
           "worker-status"
         ],
         "options": {
-          "cwd": "${workspaceFolder:Application}",
+          "cwd": "${workspaceFolder:HarbourDesk}",
           "env": {
             "HD_TASK": "1"
           }
@@ -190,15 +167,15 @@
         }
       },
       {
-        "label": "Task 01: Tick worker",
+        "label": "Tick worker",
         "type": "process",
-        "command": "${workspaceFolder:Application}/tds/lab",
+        "command": "${workspaceFolder:HarbourDesk}/tds/lab",
         "args": [
           "record",
           "worker-tick"
         ],
         "options": {
-          "cwd": "${workspaceFolder:Application}",
+          "cwd": "${workspaceFolder:HarbourDesk}",
           "env": {
             "HD_TASK": "1"
           }
@@ -210,9 +187,9 @@
         }
       },
       {
-        "label": "Task 01: Requeue unsent job",
+        "label": "Requeue unsent job",
         "type": "process",
-        "command": "${workspaceFolder:Application}/tds/lab",
+        "command": "${workspaceFolder:HarbourDesk}/tds/lab",
         "args": [
           "record",
           "worker-requeue",
@@ -220,7 +197,7 @@
           "${input:jobId}"
         ],
         "options": {
-          "cwd": "${workspaceFolder:Application}",
+          "cwd": "${workspaceFolder:HarbourDesk}",
           "env": {
             "HD_TASK": "1"
           }
@@ -233,15 +210,6 @@
         "id": "jobId",
         "type": "promptString",
         "description": "Job ID from the notification queue"
-      },
-      {
-        "id": "sessionId",
-        "type": "pickString",
-        "description": "Choose the task session",
-        "options": [
-          "01.1",
-          "01.2"
-        ]
       }
     ]
   }

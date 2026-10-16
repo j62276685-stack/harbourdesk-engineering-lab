@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "tds": true
+  },
+  "search.exclude": {
+    "**/tds": true
+  }
+}
