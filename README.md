@@ -4,7 +4,7 @@ HarbourDesk is an order and payment operations application with a local identity
 
 ## Run
 
-From the project directory, run `python3 -m app` or double-click [HarbourDesk.command](HarbourDesk.command) a simpler alternative is `./tds/lab serve`. Open **http://localhost:8010** in Firefox. The identity provider runs at **http://127.0.0.1:8011**. Press Control-C in the server terminal to stop both services.
+From the project directory, run `python3 -m app` or double-click [HarbourDesk.command](HarbourDesk.command). Open **http://localhost:8010** in Firefox. The identity provider runs at **http://127.0.0.1:8011**. Press Control-C in the server terminal to stop both services.
 
 Python 3.9+ is required. The SQLite database is stored at `runtime/lab.sqlite3` and is initialized on first run. Set `LAB_DB` to use a separate database.
 
