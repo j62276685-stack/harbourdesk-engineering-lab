@@ -2,7 +2,7 @@ import secrets
 from http.cookies import SimpleCookie
 from . import db
 
-COOKIE_POLICY = "Path=/; HttpOnly; SameSite=Strict"
+COOKIE_POLICY = "Path=/; HttpOnly; SameSite=Lax"
 
 def session_id(cookie_header):
     cookies = SimpleCookie()
